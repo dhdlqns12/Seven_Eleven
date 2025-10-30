@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +9,7 @@ public class Water : MonoBehaviour
             if (_player.CompareTag("Fire"))
             {
                 GameManager.Instance.isDie = true;
-                Debug.Log("¹°¿¡ ºüÁ® Á×¾ú½À´Ï´Ù.");
+                Debug.Log("ë¬¼ì— ë¹ ì ¸ ì£½ì—ˆìŠµë‹ˆë‹¤.");
             }
         }
 }

@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -11,13 +11,13 @@ public class SpecificTrapZone : MonoBehaviour
         {
             GameManager.Instance.isCollisionObstacle = true;
 
-            //¹°ÀÌ ¿ë¾Ï Ãæµ¹=>»ç¸Á
-            //ºÒÀÌ ¹° Ãæµ¹=>»ç¸Á
-            //¹°ÀÌ ¾óÀ½ Ãæµ¹=>¹Ì²ô·¯Áü
-            //ºÒÀÌ ¾óÀ½ Ãæµ¹=>¾óÀ½À» ÇÑ ¹ø ¹âÀ» ¼ö ÀÖ°í, ¹°·Î ÀüÈ¯
-            //¹°ÀÌ ½Ä¹° Ãæµ¹=> ½Ä¹°ÀÌ ÀÚ¶ó³ª´Â ¾Ö´Ï¸ÞÀÌ¼Ç+¹â°í ÀÖ´ø ¹Ù´ÚÀÌ ¹ßÆÇÀÌ µÇ¼­ À§·Î ÀÌµ¿ÇÔ
-            //¿¤·¹º£ÀÌÅÍ¸¦ ÀÛµ¿½ÃÅ´
-            //¹°,ºÒ,¹Ú½º´Â ½ºÀ§Ä¡¸¦ ´©¸¦ ¼ö ÀÖÀ½
+            //ë¬¼ì´ ìš©ì•” ì¶©ëŒ=>ì‚¬ë§
+            //ë¶ˆì´ ë¬¼ ì¶©ëŒ=>ì‚¬ë§
+            //ë¬¼ì´ ì–¼ìŒ ì¶©ëŒ=>ë¯¸ë„ëŸ¬ì§
+            //ë¶ˆì´ ì–¼ìŒ ì¶©ëŒ=>ì–¼ìŒì„ í•œ ë²ˆ ë°Ÿì„ ìˆ˜ ìžˆê³ , ë¬¼ë¡œ ì „í™˜
+            //ë¬¼ì´ ì‹ë¬¼ ì¶©ëŒ=> ì‹ë¬¼ì´ ìžë¼ë‚˜ëŠ” ì• ë‹ˆë©”ì´ì…˜+ë°Ÿê³  ìžˆë˜ ë°”ë‹¥ì´ ë°œíŒì´ ë˜ì„œ ìœ„ë¡œ ì´ë™í•¨
+            //ì—˜ë ˆë² ì´í„°ë¥¼ ìž‘ë™ì‹œí‚´
+            //ë¬¼,ë¶ˆ,ë°•ìŠ¤ëŠ” ìŠ¤ìœ„ì¹˜ë¥¼ ëˆ„ë¥¼ ìˆ˜ ìžˆìŒ
             //
 
             
@@ -30,7 +30,7 @@ public class SpecificTrapZone : MonoBehaviour
         if (_player.CompareTag("Player"))
         {
             
-            //½ºÀ§Ä¡¸¦ Ãæµ¹¿µ¿ªÀ» ¹þ¾î³ª¸é ½ºÀ§Ä¡°¡ ´Ù½Ã ¿øÀ§Ä¡·Î ¿Ã¶ó°¨
+            //ìŠ¤ìœ„ì¹˜ë¥¼ ì¶©ëŒì˜ì—­ì„ ë²—ì–´ë‚˜ë©´ ìŠ¤ìœ„ì¹˜ê°€ ë‹¤ì‹œ ì›ìœ„ì¹˜ë¡œ ì˜¬ë¼ê°
             
             GameManager.Instance.isCollisionObstacle = false;
         }

@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +9,7 @@ public class RedWater : MonoBehaviour
             if (_player.CompareTag("Water"))
             {
                 GameManager.Instance.isDie = true;
-                Debug.Log("¿ë¾Ï¿¡ ºüÁ® Á×¾ú½À´Ï´Ù.");
+                Debug.Log("ìš©ì•”ì— ë¹ ì ¸ ì£½ì—ˆìŠµë‹ˆë‹¤.");
             }
         }
 }
