@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Box : MonoBehaviour
 {
+    bool playerInRange=false; //매니저 추가 시 수정
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            //MainGameManager.Instance.playerInRange = true;//Player 추가되면 수정
+            playerInRange = true;//Player 추가되면 수정 MainGameManager.Instance.
         }
     }
 
@@ -16,7 +18,7 @@ public class Box : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            //MainGameManager.Instance.playerInRange = false;//Player 추가되면 수정
+            playerInRange = false;//Player 추가되면 수정 MainGameManager.Instance.playerInRange
         }
     }
 }
