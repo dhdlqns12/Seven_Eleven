@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,7 +8,7 @@ public class Box : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            MainGameManager.Instance.playerInRange = true;//Player Ãß°¡µÇ¸é ¼öÁ¤
+            //MainGameManager.Instance.playerInRange = true;//Player ì¶”ê°€ë˜ë©´ ìˆ˜ì •
         }
     }
 
@@ -16,7 +16,7 @@ public class Box : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            MainGameManager.Instance.playerInRange = false;//Player Ãß°¡µÇ¸é ¼öÁ¤
+            //MainGameManager.Instance.playerInRange = false;//Player ì¶”ê°€ë˜ë©´ ìˆ˜ì •
         }
     }
 }
