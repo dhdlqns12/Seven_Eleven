@@ -21,6 +21,14 @@ public class temp_SceneManager : MonoBehaviour
         {
             ManagerRoot.UIManager.ShowPanel<StageSelectUI>();
         }
+        if(scene.name== "Main_Title")
+        {
+            ManagerRoot.UIManager.ShowPanel<MainTitleUI>();
+        }
+        if(scene.name== "Intro")
+        {
+            ManagerRoot.UIManager.ShowPanel<IntroUI>();
+        }
     }
 
     public void LoadScene(string SceneName) // 씬 전환 전 공통 작업 처리
