@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -32,12 +32,12 @@ public class StageFailUI : UIBase
     #region 버튼 메서드
     private void RestartButton()
     {
-        ManagerRoot.TempSceneManager.RestartScene();
+        ManagerRoot.SceneController.RestartScene();
     }
 
     private void GoToStageSelectButton()
     {
-        ManagerRoot.TempSceneManager.LoadStageSelectScene();
+        ManagerRoot.SceneController.LoadStageSelectScene();
     }
     #endregion
 }

@@ -37,9 +37,9 @@ public class UIManager : MonoBehaviour  //UI매니저는 UI패널을 관리하�
         }
     }
 
-    private Canvas GetTargetCanvas(UIType uiType)
+    private Canvas GetTargetCanvas(UIType _uiType)
     {
-        switch (uiType)
+        switch (_uiType)
         {
             case UIType.Scene:
                 return sceneCanvas;

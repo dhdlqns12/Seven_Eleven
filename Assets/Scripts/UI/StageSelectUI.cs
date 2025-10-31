@@ -77,13 +77,13 @@ public class StageSelectUI : UIBase
             return;
         }
         Close();
-        ManagerRoot.TempSceneManager.LoadStageScene(stageNumber);
+        ManagerRoot.SceneController.LoadStageScene(stageNumber);
     }
 
     public void GoToMainButton()
     {
         Close();
-        ManagerRoot.TempSceneManager.LoadMainScene();
+        ManagerRoot.SceneController.LoadMainScene();
     }
     #endregion
 }
