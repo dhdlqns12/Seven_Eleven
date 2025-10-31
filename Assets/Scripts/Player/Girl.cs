@@ -9,12 +9,12 @@ namespace Player
     {
         public override void HandleAction()
         {
-            float horizontalInput = 0f;
-            float verticalInput = 0f;
+            float horizontalInput = 0f; //수평이동
+            float verticalInput = 0f; //수직이동 (Y축)
 
             jumpRequsted = false;
             
-            if (Input.GetKey(KeyCode.UpArrow))
+            if (isGrounded==true&&Input.GetKeyDown(KeyCode.UpArrow))
             {
                 jumpRequsted = true;
             }

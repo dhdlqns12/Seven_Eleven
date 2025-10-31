@@ -18,39 +18,68 @@ namespace Player
         [SerializeField]
         Rigidbody2D rb;
         
-        [SerializeField]
-        protected SpriteRenderer spriteRenderer;
+        [SerializeField] protected SpriteRenderer spriteRenderer;
         protected bool jumpRequsted = false;
-        private bool isGrounded = false;
-        
-        void Update()
+        protected bool isGrounded = false;  //질문 1. 이 줄 public으로 써도 되나요? 안된다면 protected가 좀 더 보안이 좋기 때문일까요?
+                                            //답변 : 가능은 하지만, 캡슐화와 은닉화 위해서 protected가 더 좋습니다.
+        void Update() //프레임기반 호출
         {
             HandleAction();
         }
 
-        void FixedUpdate()
+        void FixedUpdate() //물리효과(rigidbody)가 적용된 오브젝트를 조정할 때
         {
             Move();
             Jump();
         }
-        public void Move()
+        public void Move() //이 안에서 리지드바디 이용해서 구현해야함
         {
-            //이 안에서 리지드바디를 이용해서 움직임을 구현해야함
             rb.AddForce(movementDirection * speed); //이동 = 방향 * 속도
-            
         }
 
-        public void Jump()
+
+        private void OnTriggerEnter2D(Collider2D Object) //장애물들과 충돌처리 코드 완료. 테스트 필요
         {
-            isGrounded = Physics2D.Raycast(transform.position, Vector2.down, 1f, LayerMask.GetMask("Ground"));
+            if (Object.CompareTag("Box"))
+            {
+                ManagerRoot.GameManager.isDie = true;
+                Debug.Log("박스에 충돌했습니다.");
+            }
+            if (Object.CompareTag("RedWater"))
+            {
+                ManagerRoot.GameManager.isDie = true;
+                Debug.Log("용암에 충돌했습니다.");
+            }
+            if (Object.CompareTag("Water"))
+            {
+                ManagerRoot.GameManager.isDie = true;
+                Debug.Log("물에 충돌했습니다.");
+            }
+            if (Object.CompareTag("BlueWater"))
+            {
+                ManagerRoot.GameManager.isDie = true;
+                Debug.Log("파도에 충돌했습니다.");
+            }
+
+           // if (Object.CompareTag("Star"))
+            //{
+            //    ManagerRoot.GameManager.AddStar("Stage 01", 1);
+
+           // }
+        }
+        
+        public void Jump() 
+        {
+            isGrounded = Physics2D.Raycast(transform.position, Vector2.down, 0.45f, LayerMask.GetMask("Ground"));
             Debug.Log($"jumpRequsted: {jumpRequsted}, isGrounded: {isGrounded}");
             
-            if (jumpRequsted&&isGrounded)
+            if (jumpRequsted)
             {
                 rb.velocity = new Vector2(rb.velocity.x, 0f);
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                
+                jumpRequsted = false;
             }
-            
         }
         public abstract void HandleAction();
     }

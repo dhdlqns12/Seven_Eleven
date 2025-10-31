@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Water
   - Fire
+  - Box
+  - RedWater
+  - BlueWater
   layers:
   - Default
   - TransparentFX
