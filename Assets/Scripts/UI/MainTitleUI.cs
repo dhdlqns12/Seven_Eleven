@@ -14,10 +14,14 @@ public class MainTitleUI : UIBase
     [SerializeField] private Button exitButton;
 
     [Header("뮤트 버튼")]
-    [SerializeField] private Button soundOnOffButton;
+    [SerializeField] private Button soundOnButton;
+    [SerializeField] private Button soundOffButton;
     [SerializeField] private Image soundOnOffButtonImage;
     [SerializeField] private Sprite soundOnSprite;
     [SerializeField] private Sprite soundOffSprite;
+
+    [Header("효과음")]
+    [SerializeField] private AudioClip clickbtn;
 
     protected override void SetupUI()
     {
@@ -32,7 +36,9 @@ public class MainTitleUI : UIBase
         //achievementButton?.onClick.AddListener(AchievementButton);
         //customizingButton?.onClick.AddListener(CustomizingButton);
         exitButton?.onClick.AddListener(ExitButton);
-        soundOnOffButton?.onClick.AddListener(SoundOnOffButton);
+        //soundOnOffButton?.onClick.AddListener(SoundOnOffButton);
+        soundOnButton?.onClick.AddListener(SoundOnButton);
+        soundOffButton?.onClick.AddListener(SoundOffButton);
     }
 
     protected override void UnsubscribeEvents()
@@ -42,18 +48,22 @@ public class MainTitleUI : UIBase
         //achievementButton?.onClick.RemoveAllListeners();
         //customizingButton?.onClick.RemoveAllListeners();
         exitButton?.onClick.RemoveAllListeners();
-        soundOnOffButton?.onClick.RemoveAllListeners();
+        //soundOnOffButton?.onClick.RemoveAllListeners();
+        soundOnButton?.onClick.RemoveAllListeners();
+        soundOffButton?.onClick.RemoveAllListeners();
     }
     #endregion
 
     #region 버튼 메서드
     private void GameStartButton()
     {
+        ManagerRoot.AudioManager.PlaySfx(clickbtn);
         ManagerRoot.SceneController.LoadStageSelectScene();
     }
 
     private void OptionButton()
     {
+        ManagerRoot.AudioManager.PlaySfx(clickbtn);
         ManagerRoot.UIManager.ShowPanel<OptionUI>();
     }
 
@@ -69,28 +79,26 @@ public class MainTitleUI : UIBase
 
     private void ExitButton()
     {
+        ManagerRoot.AudioManager.PlaySfx(clickbtn);
         Application.Quit();
     }
 
-    private void SoundOnOffButton()
+    private void SoundOnButton()
     {
-        ManagerRoot.AudioManager.AudioMute();
-        SoundOnOffButtonUIUpdate();
+        ManagerRoot.AudioManager.PlaySfx(clickbtn);
+        ManagerRoot.AudioManager.SetBGMMute(false);
+
+        soundOnButton.gameObject.SetActive(false);
+        soundOffButton.gameObject.SetActive(true);
     }
 
-    private void SoundOnOffButtonUIUpdate()
+    private void SoundOffButton()
     {
-        if(soundOnOffButtonImage != null)
-        {
-            if (ManagerRoot.AudioManager.IsMuted())
-            {
-                soundOnOffButtonImage.sprite = soundOnSprite;
-            }
-            else
-            {
-                soundOnOffButtonImage.sprite = soundOffSprite;
-            }
-        }
+        ManagerRoot.AudioManager.PlaySfx(clickbtn);
+        ManagerRoot.AudioManager.SetBGMMute(true);
+
+        soundOffButton.gameObject.SetActive(false);
+        soundOnButton.gameObject.SetActive(true);
     }
     #endregion
 }

@@ -17,7 +17,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip[] bgmClips;
 
     [Header("SFX Clips")]
-    [SerializeField] private AudioClip[] sfxClips;
+    [SerializeField] private AudioClip sfxClips;
 
     private bool isMuted = false;
     private float lastMasterVolume;
@@ -45,6 +45,8 @@ public class AudioManager : MonoBehaviour
     #region 볼륨 설정
     public void SetMasterVolume(float volume)
     {
+        lastMasterVolume = volume;
+
         if (volume == 0)
         {
             audioMixer.SetFloat("MasterVolume", -80f);
@@ -91,7 +93,17 @@ public class AudioManager : MonoBehaviour
         float bgmVolume = PlayerPrefs.GetFloat("BGMVolume", 1f);
         float sfxVolume = PlayerPrefs.GetFloat("SFXVolume", 1f);
 
-        SetMasterVolume(mastervolume);
+        lastMasterVolume = mastervolume;
+        isMuted = PlayerPrefs.GetInt("Muted", 0) == 1;
+        if (isMuted)
+        {
+            audioMixer.SetFloat("MasterVolume", -80f);
+        }
+        else
+        {
+            SetMasterVolume(mastervolume);
+        }
+
         SetBGMVolume(bgmVolume);
         SetSFXVolume(sfxVolume);
     }
@@ -104,15 +116,24 @@ public class AudioManager : MonoBehaviour
     #region BGM 관리
     public void PlayBGM(int index)
     {
-        if (bgmClips.Length > 0 && index < bgmClips.Length)
+        if (bgmClips.Length == 0 || index >= bgmClips.Length)
         {
-            if (bgmSource.clip == bgmClips[index] && bgmSource.isPlaying)
-                return;
-
-            bgmSource.clip = bgmClips[index];
-            bgmSource.loop = true;
-            bgmSource.Play();
+            return;
         }
+
+        if (bgmClips[index] == null)
+        {
+            return;
+        }
+
+        if (bgmSource.clip == bgmClips[index] && bgmSource.isPlaying)
+        {
+            return;
+        }
+
+        bgmSource.clip = bgmClips[index];
+        bgmSource.loop = true;
+        bgmSource.Play();
     }
     #endregion
 
@@ -122,33 +143,14 @@ public class AudioManager : MonoBehaviour
         if (clip != null && sfxSource != null)
         {
             sfxSource.PlayOneShot(clip);
-            Debug.Log("효과음 재생");
         }
     }
     #endregion
 
     #region 뮤트 기능
-    public void AudioMute()
+    public void SetBGMMute(bool mute)
     {
-        isMuted = !isMuted;
-
-        if (isMuted)
-        {
-            audioMixer.SetFloat("MasterVolume", -80f);
-            PlayerPrefs.SetInt("Muted", 1);
-        }
-        else
-        {
-            SetMasterVolume(lastMasterVolume);
-            PlayerPrefs.SetInt("Muted", 0);
-        }
-
-        PlayerPrefs.Save();
-    }
-
-    public bool IsMuted()
-    {
-        return isMuted;
+        AudioListener.volume = mute ? 1 : 0;
     }
     #endregion
 }

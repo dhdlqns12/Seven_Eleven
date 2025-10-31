@@ -24,13 +24,16 @@ public class OptionUI : UIBase
     [Header("키보드 세팅")]
     [SerializeField] private Button keySettingButton;
 
+    [Header("효과음")]
+    [SerializeField] private AudioClip clickbtn;
+
     protected override void SetupUI()
     {
         if(ManagerRoot.AudioManager != null)
         {
-            masterVolumeSlider.value = ManagerRoot.AudioManager.GetMasterVolume();
-            bgmVolumeSlider.value = ManagerRoot.AudioManager.GetBGMVolume();
-            sfxVolumeSlider.value = ManagerRoot.AudioManager.GetSFXVolume();
+            masterVolumeSlider.SetValueWithoutNotify(ManagerRoot.AudioManager.GetMasterVolume() * 100f);
+            bgmVolumeSlider.SetValueWithoutNotify(ManagerRoot.AudioManager.GetBGMVolume() * 100f);
+            sfxVolumeSlider.SetValueWithoutNotify(ManagerRoot.AudioManager.GetSFXVolume() * 100f);
 
             masterVolumeSliderText.text = Mathf.RoundToInt(masterVolumeSlider.value) + "%";
             bgmVolumeSliderText.text = Mathf.RoundToInt(bgmVolumeSlider.value) + "%";
@@ -69,16 +72,19 @@ public class OptionUI : UIBase
     #region 버튼 메서드
     private void OptionExitButton()
     {
+        ManagerRoot.AudioManager.PlaySfx(clickbtn);
         ManagerRoot.UIManager.ClosePanel<OptionUI>();
     }
 
     private void SettingSaveButton()
     {
-        //Playerprefs로 해결?
+        ManagerRoot.AudioManager.PlaySfx(clickbtn);
+        PlayerPrefs.Save();
     }
 
     private void KeySettingButton()
     {
+        ManagerRoot.AudioManager.PlaySfx(clickbtn);
         ManagerRoot.UIManager.ShowPanel<KeySettingUI>();
     }
     #endregion
