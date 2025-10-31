@@ -14,7 +14,7 @@ public class Star : MonoBehaviour
 
 
 
-    private void OnTriggerEnter2D(Collider2D _player)
+    private void OnTriggerEnter2D(Collider2D _player)//플레이어기준으로 붙을 예정
     {
         if (_player.CompareTag("Water")|| _player.CompareTag("Fire"))
         {

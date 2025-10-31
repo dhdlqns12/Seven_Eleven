@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class StarManager : MonoBehaviour//게임매니저에 들어갈 내용 백업용 스크립트
 {
@@ -48,3 +50,43 @@ public class StarManager : MonoBehaviour//게임매니저에 들어갈 내용 �
     /// //////////////////////////////////////////////////////////////////////////
     /// </summary>
 }
+
+public class RedWater : MonoBehaviour
+{
+    private void OnTriggerEnter2D(Collider2D _player)
+    {
+        if (_player.CompareTag("Water"))
+        {
+            ManagerRoot.GameManager.isDie = true;
+            Debug.Log("용암에 빠져 죽었습니다.");
+        }
+    }
+}
+
+//public class Water : MonoBehaviour
+//{
+//    private void OnTriggerEnter2D(Collider2D o)
+//    {
+//        //if (o.CompareTag("Fire"))
+//        //{
+//        //    ManagerRoot.GameManager.isDie = true;
+//        //    Debug.Log("물에 빠져 죽었습니다.");
+//        //}
+
+
+//        if (o.CompareTag("Ice"))
+//        {
+//            speed = 5f;
+//        }
+//    }
+//        private void OnTriggerExit2D(Collider2D o)
+//        {
+//            if(o.CompareTag("Ice"))
+//            {
+//                speed = 8f;
+//            }
+//        }
+    
+//}
+
+
