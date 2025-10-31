@@ -43,7 +43,7 @@ namespace Player
         public void Jump()
         {
             isGrounded = Physics2D.Raycast(transform.position, Vector2.down, 1f, LayerMask.GetMask("Ground"));
-            Debug.Log($"jumpRequsted: {jumpRequsted}, isGrounded: {isGrounded}");
+            //Debug.Log($"jumpRequsted: {jumpRequsted}, isGrounded: {isGrounded}");
             
             if (jumpRequsted&&isGrounded)
             {
