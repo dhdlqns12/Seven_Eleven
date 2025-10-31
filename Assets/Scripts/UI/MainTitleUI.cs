@@ -49,7 +49,7 @@ public class MainTitleUI : UIBase
     #region 버튼 메서드
     private void GameStartButton()
     {
-        ManagerRoot.TempSceneManager.LoadStageSelectScene();
+        ManagerRoot.SceneController.LoadStageSelectScene();
     }
 
     private void OptionButton()

@@ -70,7 +70,7 @@ public class IntroUI : UIBase
         }
 
         Close();
-        ManagerRoot.TempSceneManager.LoadMainScene();
+        ManagerRoot.SceneController.LoadMainScene();
 
     }
 }
