@@ -6,42 +6,67 @@ using UnityEngine.UI;
 
 public class OptionUI : UIBase
 {
-    [Header("ø…º«√¢")]
+    [Header("ÏòµÏÖòÏ∞Ω")]
     [SerializeField] private Button optionExitButton;
     [SerializeField] private Button settingSaveButton;
 
-    [Header("ªÁøÓµÂ ºº∆√")]
+    [Header("ÏÇ¨Ïö¥Îìú ÏÑ∏ÌåÖ")]
     [SerializeField] private Slider masterVolumeSlider;
-    [SerializeField] private TextMeshProUGUI masterVolumeSlider_Text;
+    [SerializeField] private TextMeshProUGUI masterVolumeSliderText;
     [SerializeField] private Slider bgmVolumeSlider;
-    [SerializeField] private TextMeshProUGUI bgmVolumeSlider_Text;
+    [SerializeField] private TextMeshProUGUI bgmVolumeSliderText;
     [SerializeField] private Slider sfxVolumeSlider;
-    [SerializeField] private TextMeshProUGUI sfxVolumeSlider_Text;
+    [SerializeField] private TextMeshProUGUI sfxVolumeSliderText;
 
-    [Header("«ÿªÛµµ ºº∆√")]
+    [Header("Ìï¥ÏÉÅÎèÑ ÏÑ∏ÌåÖ")]
     [SerializeField] private Dropdown screenDropdown;
 
-    [Header("≈∞∫∏µÂ ºº∆√")]
+    [Header("ÌÇ§Î≥¥Îìú ÏÑ∏ÌåÖ")]
     [SerializeField] private Button keySettingButton;
 
     protected override void SetupUI()
     {
-        
+        if(ManagerRoot.AudioManager != null)
+        {
+            masterVolumeSlider.value = ManagerRoot.AudioManager.GetMasterVolume();
+            bgmVolumeSlider.value = ManagerRoot.AudioManager.GetBGMVolume();
+            sfxVolumeSlider.value = ManagerRoot.AudioManager.GetSFXVolume();
+
+            masterVolumeSliderText.text = Mathf.RoundToInt(masterVolumeSlider.value) + "%";
+            bgmVolumeSliderText.text = Mathf.RoundToInt(bgmVolumeSlider.value) + "%";
+            sfxVolumeSliderText.text = Mathf.RoundToInt(sfxVolumeSlider.value) + "%";
+        }
     }
 
-    #region ¿Ã∫•∆Æ ±∏µ∂/«ÿ¡¶
+    #region Ïù¥Î≤§Ìä∏ Íµ¨ÎèÖ/Ìï¥Ï†ú
     protected override void SubscribeEvents()
     {
-        
+        optionExitButton?.onClick.AddListener(OptionExitButton);
+        settingSaveButton?.onClick.AddListener(SettingSaveButton);
+        keySettingButton?.onClick.AddListener(KeySettingButton);
+
+        masterVolumeSlider?.onValueChanged.AddListener(MasterVolumeSlider);
+        bgmVolumeSlider?.onValueChanged.AddListener(BGMVolumeSlider);
+        sfxVolumeSlider?.onValueChanged.AddListener(SFXVolumeSlider);
+
+        //screenDropdown?.onValueChanged.AddListener();
     }
 
     protected override void UnsubscribeEvents()
     {
-        
+        optionExitButton?.onClick.RemoveAllListeners();
+        settingSaveButton?.onClick.RemoveAllListeners();
+        keySettingButton?.onClick.RemoveAllListeners();
+
+        masterVolumeSlider?.onValueChanged.RemoveAllListeners();
+        bgmVolumeSlider?.onValueChanged.RemoveAllListeners();
+        sfxVolumeSlider?.onValueChanged.RemoveAllListeners();
+
+        screenDropdown?.onValueChanged.RemoveAllListeners();
     }
     #endregion
 
-    #region πˆ∆∞ ∏ﬁº≠µÂ
+    #region Î≤ÑÌäº Î©îÏÑúÎìú
     private void OptionExitButton()
     {
         ManagerRoot.UIManager.ClosePanel<OptionUI>();
@@ -49,25 +74,37 @@ public class OptionUI : UIBase
 
     private void SettingSaveButton()
     {
-
+        //PlayerprefsÎ°ú Ìï¥Í≤∞?
     }
 
     private void KeySettingButton()
     {
-        //ManagerRoot.UIManager.ShowPanel<>();
+        ManagerRoot.UIManager.ShowPanel<KeySettingUI>();
     }
     #endregion
 
-    #region ΩΩ∂Û¿Ã¥ı
+    #region Ïä¨ÎùºÏù¥Îçî Î©îÏÑúÎìú
     private void MasterVolumeSlider(float value)
     {
-        //ManagerRoot.AudioManager.SetMasterVolume(value);
+        ManagerRoot.AudioManager.SetMasterVolume(value / 100f);
+        masterVolumeSliderText.text = Mathf.RoundToInt(value) + "%";
     }
 
-    private void MasterVolumSliderText()
+    private void BGMVolumeSlider(float value)
     {
-
+        ManagerRoot.AudioManager.SetBGMVolume(value / 100f);
+        bgmVolumeSliderText.text = Mathf.RoundToInt(value) + "%";
     }
+
+    private void SFXVolumeSlider(float value)
+    {
+        ManagerRoot.AudioManager.SetSFXVolume(value / 100f);
+        sfxVolumeSliderText.text = Mathf.RoundToInt(value) + "%";
+    }
+    #endregion
+
+    #region ÎìúÎ°≠Îã§Ïö¥ Î©îÏÑúÎìú
+
     #endregion
 
 }
