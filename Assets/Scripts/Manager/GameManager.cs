@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
    
 
     public Dictionary<string, int> stageStars = new Dictionary<string, int>();
+   
 
     void Awake()
     {
@@ -47,7 +48,9 @@ public class GameManager : MonoBehaviour
             else
             {
                 stageStars[_stageName] += _starCount;
+
             }
+
 
             PlayerPrefs.SetInt(_stageName, stageStars[_stageName]);
             PlayerPrefs.Save(); // 저장 확정

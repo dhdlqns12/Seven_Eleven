@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 public class StageSelectUI : UIBase
@@ -11,14 +12,50 @@ public class StageSelectUI : UIBase
     [SerializeField] private Button goToMain_Btn;
 
     [Header("스테이지 선택 버튼")]
-    [SerializeField] private Button[] stageSelect_Btn;
+    [SerializeField] private Button[] stageSelect_Btn;//인덱스는 0,1,2,3,4
 
     [Header("점수")]
-    [SerializeField] private Sprite[] Scores;
-
+    [SerializeField] private Sprite[] scores;//인덱스는 0,1,2,3
+    [SerializeField] private Image[] currentScores;//인덱스는 0,1,2,3
 
     protected override void SetupUI()
     {
+
+    }
+
+    string[] stageNames = { "Stage1", "Stage2", "Stage3", "Stage4", "Stage5" };
+
+    public void GetScore()
+    {
+        for (int i = 0; i < stageNames.Length; i++)//현재 맵의 스테이지 점수상황을 싹 돌면서
+        {
+            //내가 들어간 씬의 점수를 가져와서 
+
+            if (ManagerRoot.GameManager.stageStars[stageNames[i]] == 0)
+            {
+                currentScores[i].sprite = scores[0];
+            }
+            else if (ManagerRoot.GameManager.stageStars[stageNames[i]] == 1)
+            {
+                currentScores[i].sprite = scores[1];
+            }
+            else if (ManagerRoot.GameManager.stageStars[stageNames[i]] == 2)
+            {
+                currentScores[i].sprite = scores[2];
+            }
+            else if (ManagerRoot.GameManager.stageStars[stageNames[i]] == 3)
+            {
+                currentScores[i].sprite = scores[3];
+            }
+
+            //점수값
+
+            //내가 입력한 스테이지 값을 가져와, 그 스테이지의 점수값을 가져와
+            //스테이지 점수현황 를 돌면서 스테이지 이름을 확인하고 내가 들어간 씬의 이름이랑 똑같으면 그 스테이지의 점수를 가져와서 조건을 체크하고 거기에 맞는 스프라이트를 넣어
+                      
+        }
+
+
     }
 
     #region 스테이지 버튼 업데이트
