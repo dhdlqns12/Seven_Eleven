@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class UIManager : MonoBehaviour  // UI매니저는 UI패널을 관리하는 역활
 {

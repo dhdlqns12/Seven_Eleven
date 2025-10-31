@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 
     
     //isdDie==true일 때 실패 UI 뜨는거 작성 부탁드려용
-    public void GameOVer()
+    public void GameOver()
     {
         ManagerRoot.UIManager.ShowPanel<StageFailUI>();
         Time.timeScale = 0f;
@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
 
    
 
-    Dictionary<string, int> stageStars = new Dictionary<string, int>();
+    public Dictionary<string, int> stageStars = new Dictionary<string, int>();
 
     void Awake()
     {

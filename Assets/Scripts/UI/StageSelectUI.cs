@@ -13,9 +13,9 @@ public class StageSelectUI : UIBase
     [Header("스테이지 선택 버튼")]
     [SerializeField] private Button[] stageSelect_Btn;
 
-    [Header("버튼 이미지")]
-    [SerializeField] private Sprite unlockedSprite;
-    [SerializeField] private Sprite lockedSprite;
+    [Header("점수")]
+    [SerializeField] private Sprite[] Scores;
+
 
     protected override void SetupUI()
     {
