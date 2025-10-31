@@ -19,7 +19,7 @@ public class OptionUI : UIBase
     [SerializeField] private TextMeshProUGUI sfxVolumeSliderText;
 
     [Header("해상도 세팅")]
-    [SerializeField] private Dropdown screenDropdown;
+    [SerializeField] private TMP_Dropdown screenDropdown;
 
     [Header("키보드 세팅")]
     [SerializeField] private Button keySettingButton;

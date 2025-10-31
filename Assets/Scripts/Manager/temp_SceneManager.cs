@@ -66,6 +66,6 @@ public class temp_SceneManager : MonoBehaviour
 
     public void LoadMainScene()
     {
-        SceneManager.LoadScene("MainMenuScene");
+        SceneManager.LoadScene("Main_Title");
     }
 }
