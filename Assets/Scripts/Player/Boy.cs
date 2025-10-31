@@ -12,7 +12,7 @@ namespace Player
             float verticalInput = 0f;
             jumpRequsted = false;
             
-            if (Input.GetKey(KeyCode.W))
+            if (Input.GetKeyDown(KeyCode.W))
             {
                 jumpRequsted = true;
             }

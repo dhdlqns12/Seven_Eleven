@@ -130,6 +130,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4831640597993001743, guid: 8d822631639c52745a3aa86e6cffaaea, type: 3}
+      propertyPath: bgmClips.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4831640597993001743, guid: 8d822631639c52745a3aa86e6cffaaea, type: 3}
+      propertyPath: bgmClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: eb2beda33b8e57841b69111be94ccd3d, type: 3}
     - target: {fileID: 5256705500752138139, guid: 8d822631639c52745a3aa86e6cffaaea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
