@@ -714,7 +714,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 505019796}
   uiManager: {fileID: 1582315282}
-  tempSceneManager: {fileID: 1868462708}
+  sceneController: {fileID: 0}
   audioManager: {fileID: 0}
 --- !u!4 &1761024006
 Transform:
