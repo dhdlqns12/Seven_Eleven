@@ -450,6 +450,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDie: 0
+  isCollisionObstacle: 0
 --- !u!114 &638560158 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7035977211419448139, guid: ed27348fd8ea6144c930c352a3e44f8a, type: 3}

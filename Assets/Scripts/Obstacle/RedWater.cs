@@ -8,8 +8,8 @@ public class RedWater : MonoBehaviour
         {
             if (_player.CompareTag("Water"))
             {
-                GameManager.Instance.isDie = true;
-                Debug.Log("¿ë¾Ï¿¡ ºüÁ® Á×¾ú½À´Ï´Ù.");
+                ManagerRoot.GameManager.isDie = true;
+                Debug.Log("ìš©ì•”ì— ë¹ ì ¸ ì£½ì—ˆìŠµë‹ˆë‹¤.");
             }
         }
 }

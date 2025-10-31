@@ -8,8 +8,8 @@ public class Water : MonoBehaviour
         {
             if (_player.CompareTag("Fire"))
             {
-                GameManager.Instance.isDie = true;
-                Debug.Log("¹°¿¡ ºüÁ® Á×¾ú½À´Ï´Ù.");
+            ManagerRoot.GameManager.isDie = true;
+                Debug.Log("ë¬¼ì— ë¹ ì ¸ ì£½ì—ˆìŠµë‹ˆë‹¤.");
             }
         }
 }

@@ -2,17 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KeySettingUI : MonoBehaviour
+public class KeySettingUI : UIBase
 {
-    // Start is called before the first frame update
-    void Start()
+    //[Header("")]
+    //[SerializeField]
+
+    protected override void SetupUI()
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
+    #region 이벤트 구독/해제
+    protected override void SubscribeEvents()
     {
-        
+
     }
+
+    protected override void UnsubscribeEvents()
+    {
+
+    }
+    #endregion
 }
