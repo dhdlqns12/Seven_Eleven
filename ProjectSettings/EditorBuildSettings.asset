@@ -6,9 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Test_Jongweon.unity
-    guid: 902cde711c9ad664693da3b487f7d295
+    path: Assets/Scenes/Main_Title.unity
+    guid: 1d130fd3f45a3b341b539eeeb5aae362
   - enabled: 1
     path: Assets/Scenes/StageSelect.unity
     guid: 173be043b8b5fa64bab6fa159ad21832
+  - enabled: 1
+    path: Assets/Scenes/Stage/Stage 01/Stage 01.unity
+    guid: 4acf8e36dd932674ba6ef1251094bc36
+  - enabled: 1
+    path: Assets/Scenes/Test_Jongweon.unity
+    guid: 902cde711c9ad664693da3b487f7d295
   m_configObjects: {}

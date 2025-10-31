@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 2059233296670100868}
   - component: {fileID: 3668519554275873249}
   m_Layer: 5
-  m_Name: StageSelect_Btn
+  m_Name: StageSelect_Btn_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -785,7 +785,7 @@ GameObject:
   - component: {fileID: 5608682733917240477}
   - component: {fileID: 6484082164829894679}
   m_Layer: 5
-  m_Name: StageSelect_Btn
+  m_Name: StageSelect_Btn_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -906,7 +906,7 @@ GameObject:
   - component: {fileID: 6915120118953039030}
   - component: {fileID: 4199345376341844511}
   m_Layer: 5
-  m_Name: StageSelect_Btn
+  m_Name: StageSelect_Btn_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1147,7 +1147,7 @@ GameObject:
   - component: {fileID: 6904873956154636167}
   - component: {fileID: 7899838218851671919}
   m_Layer: 5
-  m_Name: StageSelect_Btn
+  m_Name: StageSelect_Btn_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1264,6 +1264,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3948231726002792458}
+  - component: {fileID: 6347440301026185430}
   m_Layer: 5
   m_Name: ------StageSelectUI------
   m_TagString: Untagged
@@ -1294,6 +1295,28 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &6347440301026185430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5848997885597594116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 304c6709dd5e0a04d806d5b0c8f296a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiType: 0
+  goToMain_Btn: {fileID: 3243246035407471946}
+  stageSelect_Btn:
+  - {fileID: 7899838218851671919}
+  - {fileID: 7320309386408430527}
+  - {fileID: 4199345376341844511}
+  - {fileID: 6484082164829894679}
+  - {fileID: 3668519554275873249}
+  unlockedSprite: {fileID: 21300000, guid: 5b8de5f31e6360942afbccd4e8afb036, type: 3}
+  lockedSprite: {fileID: 21300000, guid: 4245e18d5acdc464c9c171f71d0b1d2d, type: 3}
 --- !u!1 &6089604060837709649
 GameObject:
   m_ObjectHideFlags: 0
@@ -1575,7 +1598,7 @@ GameObject:
   - component: {fileID: 7855111151625228962}
   - component: {fileID: 7320309386408430527}
   m_Layer: 5
-  m_Name: StageSelect_Btn
+  m_Name: StageSelect_Btn_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

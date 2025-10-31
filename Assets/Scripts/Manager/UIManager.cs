@@ -26,7 +26,6 @@ public class UIManager : MonoBehaviour  //UI매니저는 UI패널을 관리하�
     {
         foreach (var prefab in uiPrefabLists)
         {
-
             Canvas targetCanvas = GetTargetCanvas(prefab.UIType);
 
             if (targetCanvas != null)
