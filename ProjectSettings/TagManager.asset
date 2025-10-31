@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Water
   - Fire
+  - Star
+  - Box
+  - Flag_blue
+  - Flag_red
   layers:
   - Default
   - TransparentFX

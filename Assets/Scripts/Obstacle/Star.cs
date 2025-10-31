@@ -1,13 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using UnityEngine;
 
 public class Star : MonoBehaviour
 {
     bool isGetStar=false;
-    public static int StarGetcount = 0;
-    
+
+
+    static int StarGetcount;//추후 수정
+
+
+
+
     private void OnTriggerEnter2D(Collider2D _player)
     {
         if (_player.CompareTag("Water")|| _player.CompareTag("Fire"))
@@ -22,9 +28,11 @@ public class Star : MonoBehaviour
 
             int starDebug=PlayerPrefs.GetInt("GetStarSave");
             Debug.Log($"별 {starDebug}개 획득!");
+            //starDebug는 나중에 게임매니저에 선언하고 불러오고 하는거 작성하기
+            //스테이지 해금하고나
         }
 
-        
+
     }
 
 
