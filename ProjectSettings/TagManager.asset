@@ -6,17 +6,18 @@ TagManager:
   tags:
   - Water
   - Fire
+  - Star
   - Box
-  - RedWater
-  - BlueWater
+  - Flag_blue
+  - Flag_red
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
-  - Ground
+  - 
   - 
   - 
   - 
