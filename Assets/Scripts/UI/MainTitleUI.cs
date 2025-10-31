@@ -6,22 +6,25 @@ using TMPro;
 
 public class MainTitleUI : UIBase
 {
-    [Header("∏ﬁ¿Œ ≈∏¿Ã∆≤ UI")]
+    [Header("Î©îÏù∏ ÌÉÄÏù¥ÌãÄ UI")]
     [SerializeField] private Button startButton;
     [SerializeField] private Button optionButton;
-    [SerializeField] private Button achievementButton;
+    //[SerializeField] private Button achievementButton;
     [SerializeField] private Button customizingButton;
     [SerializeField] private Button exitButton;
+
+    [Header("ÎÆ§Ìä∏ Î≤ÑÌäº")]
     [SerializeField] private Button soundOnOffButton;
-
-
+    [SerializeField] private Image soundOnOffButtonImage;
+    [SerializeField] private Sprite soundOnSprite;
+    [SerializeField] private Sprite soundOffSprite;
 
     protected override void SetupUI()
     {
 
     }
 
-    #region ¿Ã∫•∆Æ ±∏µ∂/«ÿ¡¶
+    #region Ïù¥Î≤§Ìä∏ Íµ¨ÎèÖ/Ìï¥Ï†ú
     protected override void SubscribeEvents()
     {
         startButton?.onClick.AddListener(GameStartButton);
@@ -29,7 +32,7 @@ public class MainTitleUI : UIBase
         //achievementButton?.onClick.AddListener(AchievementButton);
         //customizingButton?.onClick.AddListener(CustomizingButton);
         exitButton?.onClick.AddListener(ExitButton);
-        //soundOnOffButton?.onClick.AddListener(SoundOnOffButton);
+        soundOnOffButton?.onClick.AddListener(SoundOnOffButton);
     }
 
     protected override void UnsubscribeEvents()
@@ -39,14 +42,14 @@ public class MainTitleUI : UIBase
         //achievementButton?.onClick.RemoveAllListeners();
         //customizingButton?.onClick.RemoveAllListeners();
         exitButton?.onClick.RemoveAllListeners();
-        //soundOnOffButton?.onClick.RemoveAllListeners();
+        soundOnOffButton?.onClick.RemoveAllListeners();
     }
     #endregion
 
-    #region πˆ∆∞ ∏ﬁº≠µÂ
+    #region Î≤ÑÌäº Î©îÏÑúÎìú
     private void GameStartButton()
     {
-        //ManagerRoot.
+        ManagerRoot.TempSceneManager.LoadStageSelectScene();
     }
 
     private void OptionButton()
@@ -69,9 +72,25 @@ public class MainTitleUI : UIBase
         Application.Quit();
     }
 
-    //private void SoundOnOffButton()
-    //{
-    //    
-    //}
+    private void SoundOnOffButton()
+    {
+        ManagerRoot.AudioManager.AudioMute();
+        SoundOnOffButtonUIUpdate();
+    }
+
+    private void SoundOnOffButtonUIUpdate()
+    {
+        if(soundOnOffButtonImage != null)
+        {
+            if (ManagerRoot.AudioManager.IsMuted())
+            {
+                soundOnOffButtonImage.sprite = soundOnSprite;
+            }
+            else
+            {
+                soundOnOffButtonImage.sprite = soundOffSprite;
+            }
+        }
+    }
     #endregion
 }
