@@ -12,7 +12,6 @@ public class StageFailUI : UIBase
 
     protected override void SetupUI()
     {
-
     }
 
     #region 이벤트 구독/해제
