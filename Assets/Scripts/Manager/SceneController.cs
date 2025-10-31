@@ -25,10 +25,12 @@ public class SceneController : MonoBehaviour
         {
             ManagerRoot.UIManager.ShowPanel<StageSelectUI>();
         }
+
         if(_scene.name== "Main_Title")
         {
             ManagerRoot.UIManager.ShowPanel<MainTitleUI>();
         }
+
         if(_scene.name== "Intro")
         {
             ManagerRoot.UIManager.ShowPanel<IntroUI>();

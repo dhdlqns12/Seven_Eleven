@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class UIManager : MonoBehaviour  //UI매니저는 UI패널을 관리하는 역활
+public class UIManager : MonoBehaviour  // UI매니저는 UI패널을 관리하는 역활
 {
     [Header("Canvas")]
     [SerializeField] private Canvas sceneCanvas;
@@ -14,7 +14,7 @@ public class UIManager : MonoBehaviour  //UI매니저는 UI패널을 관리하�
 
     private Dictionary<string, UIBase> uiPanels = new Dictionary<string, UIBase>();
 
-    private UIBase currentPanel;  // 현재 활성화된 패널 추적
+    private UIBase currentPanel; // 현재 활성화된 패널 추적
 
     private void Awake()
     {
@@ -107,7 +107,7 @@ public class UIManager : MonoBehaviour  //UI매니저는 UI패널을 관리하�
         currentPanel = null;
     }
 
-    public bool IsShowing<T>() where T : UIBase //패널이 현재활성화 상태인지 체크용도
+    public bool IsShowing<T>() where T : UIBase // 패널이 현재활성화 상태인지 체크용도
     {
         UIBase panel = GetPanel<T>();
         return panel != null && panel.gameObject.activeSelf;
