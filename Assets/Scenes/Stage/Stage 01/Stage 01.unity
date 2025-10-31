@@ -754,7 +754,7 @@ GameObject:
   - component: {fileID: 1282740039}
   - component: {fileID: 1282740038}
   m_Layer: 0
-  m_Name: Elevator input (2)
+  m_Name: 'Elevator 2 input '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -838,7 +838,7 @@ GameObject:
   - component: {fileID: 1300276682}
   - component: {fileID: 1300276681}
   m_Layer: 0
-  m_Name: Elevator input (1)
+  m_Name: 'Elevator 2 input '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
