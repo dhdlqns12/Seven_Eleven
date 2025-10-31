@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,7 +8,7 @@ public class RedWater : MonoBehaviour
         {
             if (_player.CompareTag("Water"))
             {
-                GameManager.Instance.isDie = true;
+                ManagerRoot.GameManager.isDie = true;
                 Debug.Log("용암에 빠져 죽었습니다.");
             }
         }
