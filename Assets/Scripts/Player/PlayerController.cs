@@ -22,6 +22,9 @@ namespace Player
         void Update() 
         {
             HandleAction();
+            Color rayColor = isGrounded ? Color.green : Color.red;
+            
+            Debug.DrawRay(transform.position, new Vector2(0,0.5f), rayColor);
         }
 
         void FixedUpdate() //물리효과(rigidbody)가 적용된 오브젝트를 조정할 때
@@ -66,13 +69,12 @@ namespace Player
         
         protected void Jump() 
         {
-            isGrounded = Physics2D.Raycast(transform.position, Vector2.down, 0.45f, LayerMask.GetMask("Ground"));
+            isGrounded = Physics2D.Raycast(transform.position, Vector2.down, 0.5f, LayerMask.GetMask("Ground"));
             Debug.Log($"jumpRequsted: {jumpRequsted}, isGrounded: {isGrounded}");
             
             if (jumpRequsted)
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-                
                 jumpRequsted = false;
             }
         }
