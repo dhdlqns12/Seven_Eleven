@@ -25,7 +25,8 @@ public class MainTitleUI : UIBase
 
     protected override void SetupUI()
     {
-
+        soundOffButton.gameObject.SetActive(false);
+        soundOnButton.gameObject.SetActive(true);
     }
 
     #region 이벤트 구독/해제
