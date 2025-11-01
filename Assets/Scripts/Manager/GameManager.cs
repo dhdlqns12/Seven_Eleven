@@ -60,4 +60,21 @@ public class GameManager : MonoBehaviour
     /// //////////////////////////////////////////////////////////////////////////
     /// </summary>
 
+    #region 해상도 설정
+    private void LoadResolution()
+    {
+        //PlayerPrefs에서 불러와서 Screen.SetResolution() 호출
+    }
+
+    public void SetResolution(int width, int height)
+    {
+        //Screen.SetResolution() 호출
+        //PlayerPrefs에 저장
+    }
+
+    public void GetCurrentResolutionIndex()
+    {
+        //현재 해상도와 일치하는 인덱스 반환
+    }
+    #endregion
 }

@@ -9,7 +9,6 @@ public class MainTitleUI : UIBase
     [Header("메인 타이틀 UI")]
     [SerializeField] private Button startButton;
     [SerializeField] private Button optionButton;
-    //[SerializeField] private Button achievementButton;
     [SerializeField] private Button customizingButton;
     [SerializeField] private Button exitButton;
 
@@ -34,10 +33,7 @@ public class MainTitleUI : UIBase
     {
         startButton?.onClick.AddListener(GameStartButton);
         optionButton?.onClick.AddListener(OptionButton);
-        //achievementButton?.onClick.AddListener(AchievementButton);
-        //customizingButton?.onClick.AddListener(CustomizingButton);
         exitButton?.onClick.AddListener(ExitButton);
-        //soundOnOffButton?.onClick.AddListener(SoundOnOffButton);
         soundOnButton?.onClick.AddListener(SoundOnButton);
         soundOffButton?.onClick.AddListener(SoundOffButton);
     }
@@ -46,10 +42,7 @@ public class MainTitleUI : UIBase
     {
         startButton?.onClick.RemoveAllListeners();
         optionButton?.onClick.RemoveAllListeners();
-        //achievementButton?.onClick.RemoveAllListeners();
-        //customizingButton?.onClick.RemoveAllListeners();
         exitButton?.onClick.RemoveAllListeners();
-        //soundOnOffButton?.onClick.RemoveAllListeners();
         soundOnButton?.onClick.RemoveAllListeners();
         soundOffButton?.onClick.RemoveAllListeners();
     }
