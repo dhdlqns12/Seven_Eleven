@@ -322,8 +322,12 @@ MonoBehaviour:
   bgmSource: {fileID: 1525474985562476524}
   sfxSource: {fileID: 7520692777238902943}
   audioMixer: {fileID: 24100000, guid: dee015896e42f624595210e85e337afe, type: 2}
-  bgmClips: []
-  sfxClips: []
+  bgmClips:
+  - {fileID: 0}
+  - {fileID: 8300000, guid: 7c9048d388147f94382b55c564e4148d, type: 3}
+  - {fileID: 0}
+  - {fileID: 8300000, guid: eb2beda33b8e57841b69111be94ccd3d, type: 3}
+  sfxClips: {fileID: 0}
 --- !u!1 &6068603493809643314
 GameObject:
   m_ObjectHideFlags: 0
