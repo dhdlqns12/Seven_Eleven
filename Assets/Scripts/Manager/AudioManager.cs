@@ -17,15 +17,15 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip[] bgmClips;
 
     [Header("SFX Clips")]
-    [SerializeField] private AudioClip sfxClips;
+    [SerializeField] private AudioClip[] sfxClips;
 
     private bool isMuted = false;
-    private float lastMasterVolume;
+
     private float currentMasterVolume;
     private float currentBGMVolume;
     private float currentSFXVolume;
 
-    private void Awake()
+    private void Start()
     {
         LoadAudioSetting();
     }
@@ -43,13 +43,13 @@ public class AudioManager : MonoBehaviour
     private void OnsceneLoaded(Scene scene, LoadSceneMode mode)
     {
         PlayBGM(scene.buildIndex);
+        LoadAudioSetting();
     }
 
     #region 볼륨 설정
     public void SetMasterVolume(float volume)
     {
         currentMasterVolume = volume;
-        lastMasterVolume = volume;
 
         if (volume == 0)
         {
@@ -97,29 +97,34 @@ public class AudioManager : MonoBehaviour
 
     private void LoadAudioSetting()
     {
-        currentMasterVolume = PlayerPrefs.GetFloat("MasterVolume", 1f);
-        currentBGMVolume = PlayerPrefs.GetFloat("BGMVolume", 1f);
-        currentSFXVolume = PlayerPrefs.GetFloat("SFXVolume", 1f);
+        float master = PlayerPrefs.GetFloat("MasterVolume", 1f);
+        float bgm = PlayerPrefs.GetFloat("BGMVolume", 1f);
+        float sfx = PlayerPrefs.GetFloat("SFXVolume", 1f);
 
-        lastMasterVolume = currentMasterVolume;
-        isMuted = PlayerPrefs.GetInt("Muted", 0) == 1;
+        VolumeMixerSetting("MasterVolume", master);
+        VolumeMixerSetting("BGMVolume", bgm);
+        VolumeMixerSetting("SFXVolume", sfx);
+    }
 
-        if (isMuted)
+    private void VolumeMixerSetting(string paramName, float volume)
+    {
+        float db;
+
+        if (volume == 0)
         {
-            audioMixer.SetFloat("MasterVolume", -80f);
+            db = -80f;
         }
         else
         {
-            SetMasterVolume(currentMasterVolume);
+            db = Mathf.Log10(volume) * 20;
         }
 
-        SetBGMVolume(currentBGMVolume);
-        SetSFXVolume(currentSFXVolume);
+        audioMixer.SetFloat(paramName, db);
     }
 
-    public float GetMasterVolume() => currentMasterVolume;
-    public float GetBGMVolume() => currentBGMVolume;
-    public float GetSFXVolume() => currentSFXVolume;
+    public float GetMasterVolume() => PlayerPrefs.GetFloat("MasterVolume", 1f);
+    public float GetBGMVolume() => PlayerPrefs.GetFloat("BGMVolume", 1f);
+    public float GetSFXVolume() => PlayerPrefs.GetFloat("SFXVolume", 1f);
     #endregion
 
     #region BGM 관리
