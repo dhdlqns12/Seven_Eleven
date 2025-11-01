@@ -29,8 +29,7 @@ namespace Player
                 spriteRenderer.flipX = false;
             }
             
-            movementDirection = new Vector2(horizontalInput, verticalInput).normalized; //0의 숫자를 변경하면 y값도 들어감! 하지만 추후에 점프를 넣을때 수정할 것
-            //normalized는 방향을 구하는 기능이다! 
+            movementDirection = new Vector2(horizontalInput, verticalInput).normalized; 
         }
     }
 
