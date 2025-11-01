@@ -29,7 +29,12 @@ public class OptionUI : UIBase
 
     protected override void SetupUI()
     {
-        if(ManagerRoot.AudioManager != null)
+
+    }
+
+    protected override void OnShow()
+    {
+        if (ManagerRoot.AudioManager != null)
         {
             masterVolumeSlider.SetValueWithoutNotify(ManagerRoot.AudioManager.GetMasterVolume() * 100f);
             bgmVolumeSlider.SetValueWithoutNotify(ManagerRoot.AudioManager.GetBGMVolume() * 100f);
