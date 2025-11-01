@@ -10,19 +10,18 @@ namespace Player
         {
             float horizontalInput = 0f;
             float verticalInput = 0f;
+            
             jumpRequsted = false;
             
-            if (isGrounded==true&&Input.GetKeyDown(KeyCode.W))
+            if (isGrounded==true && Input.GetKey(KeyCode.W))
             {
                 jumpRequsted = true;
             }
-
             else if (Input.GetKey(KeyCode.A))
             {
                 horizontalInput = -1f;
                 spriteRenderer.flipX = true;
             }
-
             else if (Input.GetKey(KeyCode.D))
             {
                 horizontalInput = 1f;

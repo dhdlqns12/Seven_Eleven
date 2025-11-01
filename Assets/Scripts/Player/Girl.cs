@@ -14,7 +14,7 @@ namespace Player
 
             jumpRequsted = false;
             
-            if (isGrounded==true&&Input.GetKey(KeyCode.UpArrow))
+            if (isGrounded==true && Input.GetKey(KeyCode.UpArrow))
             {
                 jumpRequsted = true;
             }

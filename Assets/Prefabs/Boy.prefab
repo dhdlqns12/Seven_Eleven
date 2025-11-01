@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 6568234870585867911}
   m_Layer: 0
   m_Name: Boy
-  m_TagString: Water
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -153,8 +153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8b98e357152640228636af11012fa5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
-  jumpForce: 5
+  speed: 5
+  jumpForce: 3
   movementDirection: {x: 0, y: 0}
   rb: {fileID: 4494665425482118431}
   spriteRenderer: {fileID: 3270452080198110305}
@@ -217,6 +217,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 1}
+  m_Offset: {x: -0.03425336, y: -0.094284534}
+  m_Size: {x: 0.5285444, y: 0.7375665}
   m_Direction: 0
