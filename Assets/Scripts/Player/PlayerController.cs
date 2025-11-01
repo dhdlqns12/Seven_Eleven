@@ -31,7 +31,7 @@ namespace Player
         }
         private void Move() //이 안에서 리지드바디 이용해서 구현해야함
         {
-            rb.AddForce(movementDirection * speed); //이동 = 방향 * 속도
+            rb.velocity=new Vector2(movementDirection.x * speed, rb.velocity.y); //이동 = 방향 * 속도
         }
         
         private void OnTriggerEnter2D(Collider2D Object) //장애물들과 충돌처리 코드 완료. 테스트 필요
@@ -71,8 +71,7 @@ namespace Player
             
             if (jumpRequsted)
             {
-                rb.velocity = new Vector2(rb.velocity.x, 0f);
-                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                 
                 jumpRequsted = false;
             }
