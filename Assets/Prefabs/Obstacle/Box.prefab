@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5243953079251275414}
   - component: {fileID: 7289589198135935945}
   - component: {fileID: 237025557217790396}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Box
   m_TagString: Box
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 50
-  m_GravityScale: 1
+  m_GravityScale: 8
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2

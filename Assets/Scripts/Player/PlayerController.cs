@@ -69,7 +69,7 @@ namespace Player
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                 jumpRequsted = false;
                 lastJumpTime = 0f;
-                ManagerRoot.AudioManager.PlaySfx(jumpClip);
+                //ManagerRoot.AudioManager.PlaySfx(jumpClip); 음악이 아직 없어유 오류방지용주석
             }
         }
         public abstract void HandleAction();

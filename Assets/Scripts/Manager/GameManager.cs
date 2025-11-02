@@ -58,9 +58,7 @@ public class GameManager : MonoBehaviour
         isDie = false;
     }
 
-    /// <summary>
-    /// ///////////////////////이 내에서만 만지작하기
-    /// </summary>
+    /// ///////////////////////star 작성중///
 
    
 
@@ -103,9 +101,9 @@ public class GameManager : MonoBehaviour
     }
 
 
-    /// <summary>
+   
     /// //////////////////////////////////////////////////////////////////////////
-    /// </summary>
+    
 
     #region 해상도 설정
     private void LoadResolution()

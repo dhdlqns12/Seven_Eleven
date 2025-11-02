@@ -9,11 +9,13 @@ public class ManagerRoot : Singleton<ManagerRoot>
     [SerializeField] private UIManager uiManager;
     [SerializeField] private SceneController sceneController;
     [SerializeField] private AudioManager audioManager;
+    [SerializeField] private SwitchManager switchManager;
 
     public static GameManager GameManager { get; private set; }
     public static UIManager UIManager { get; private set; }
     public static SceneController SceneController { get; private set; }
     public static AudioManager AudioManager { get; private set; }
+    public static SwitchManager SwitchManager { get; private set; }
 
     protected override void Init()
     {
@@ -21,5 +23,6 @@ public class ManagerRoot : Singleton<ManagerRoot>
         UIManager = uiManager;
         SceneController = sceneController;
         AudioManager = audioManager;
+        SwitchManager= switchManager;
     }
 }
