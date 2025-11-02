@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &38959783244997051
 Transform:
   m_ObjectHideFlags: 0
@@ -53,6 +53,8 @@ MonoBehaviour:
   movementDirection: {x: 0, y: 0}
   rb: {fileID: 8621893075873770660}
   spriteRenderer: {fileID: 8416891902126948120}
+  isGrounded: 0
+  animationHandler: {fileID: 8371043011619080041}
 --- !u!50 &8621893075873770660
 Rigidbody2D:
   serializedVersion: 4

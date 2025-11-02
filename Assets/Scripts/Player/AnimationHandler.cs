@@ -24,11 +24,7 @@ namespace Player
         {
             playerController = GetComponent<PlayerController>();
         }
-
-        //private void Update()
-        //{
-        //    Run(playerController.movementDirection);
-        //}s
+        
         
         public void Run(Vector2 velocity)
         {
