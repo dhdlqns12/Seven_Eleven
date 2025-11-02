@@ -5,7 +5,6 @@ using UnityEngine;
 
 namespace Player
 {
-    //리지드바디를 통해 이동을 이제 시켜줘야한다
     public abstract class PlayerController : MonoBehaviour
     {
         [SerializeField] protected float speed = 8f;
@@ -17,8 +16,10 @@ namespace Player
         
         [SerializeField] protected SpriteRenderer spriteRenderer;
         protected bool jumpRequsted = false;
-        protected bool isGrounded = false;  //질문 1. 이 줄 public으로 써도 되나요? 안된다면 protected가 좀 더 보안이 좋기 때문일까요?
-                                            //답변 : 가능은 하지만, 캡슐화와 은닉화 위해서 protected가 더 좋습니다.
+        public bool isGrounded = false;
+
+       [SerializeField]private AnimationHandler animationHandler;
+
         void Update() 
         {
             HandleAction();
@@ -32,9 +33,10 @@ namespace Player
             Move();
             Jump();
         }
-        private void Move() //이 안에서 리지드바디 이용해서 구현해야함
+        private void Move() 
         {
-            rb.velocity=new Vector2(movementDirection.x * speed, rb.velocity.y); //이동 = 방향 * 속도
+            animationHandler.Run(movementDirection);
+            rb.velocity=new Vector2(movementDirection.x * speed, rb.velocity.y); 
         }
         
         private void OnTriggerEnter2D(Collider2D Object) //장애물들과 충돌처리 코드 완료. 테스트 필요
