@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public bool isClear_1;  //소녀가 깃발에 닿았을 때
     public bool isClear_2;  //소년이 깃발에 닿았을 때 isClear_1,2가 모두 true여야 스테이지 클리어
     
-    //isdDie==true일 때 실패 UI 뜨는거 작성 부탁드려용
+    
     public void GameOver()
     {
         ManagerRoot.UIManager.ShowPanel<StageFailUI>();

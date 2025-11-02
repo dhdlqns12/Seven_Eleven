@@ -12,6 +12,7 @@ TagManager:
   - Flag_red
   - RedWater
   - Ice
+  - CanEnterButton
   layers:
   - Default
   - TransparentFX
