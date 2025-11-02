@@ -6,8 +6,12 @@ namespace Player
 {
     public class AnimationHandler : MonoBehaviour
     {
-        private static readonly int IsRunning = Animator.StringToHash("IsRunning");
-        private static readonly int IsJumping = Animator.StringToHash("IsJumping");
+        private PlayerController playerController;
+        
+        //파라미터 컨트롤 할 변수
+        private static readonly int IsRunning = Animator.StringToHash("IsRun");
+        private static readonly int IsJumping = Animator.StringToHash("IsJump");
+        private static readonly int IsDead = Animator.StringToHash("IsDead");
         
         private Animator animator;
 
@@ -16,18 +20,30 @@ namespace Player
             animator = GetComponentInChildren<Animator>();
         }
 
-        public void Run()
+        private void Start()
         {
-            animator.SetBool(IsRunning, true);
+            playerController = GetComponent<PlayerController>();
         }
 
-        public void Jump(Vector2 direction)
-        {
-            animator.SetBool(IsJumping, true);
-        }
-
-       
+        //private void Update()
+        //{
+        //    Run(playerController.movementDirection);
+        //}s
         
+        public void Run(Vector2 velocity)
+        {
+            animator.SetBool(IsRunning,Mathf.Abs(velocity.x)>0.5f); //mathf.abs로 velocity.x를 절대값으로 바꿔주었다. 0.5보다 크면 ture/ 0.5보다 작으면 false이다.
+        }                                                              
+
+        public void Jump()
+        {
+            animator.SetBool(IsJumping, playerController.isGrounded? false : true);
+        }
+
+        public void Dead()
+        {
+           animator.SetBool(IsDead,true);
+        }
     }
 
 }
