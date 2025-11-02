@@ -36,12 +36,17 @@ namespace Player
         {
             if (Object.CompareTag("Water"))
             {
+           
                 ManagerRoot.GameManager.isDie = true;
                 Debug.Log("파도에 충돌했습니다.");
             }
+
+            if (Object.CompareTag("Ice"))
+            {
+                Object.gameObject.SetActive(false);
+            }
+
         }
-
-
     }
 
 }
