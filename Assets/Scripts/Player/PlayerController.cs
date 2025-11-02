@@ -19,6 +19,10 @@ namespace Player
 
        [SerializeField]private AnimationHandler animationHandler;
 
+        [Header("효과음")]
+        //[SerializeField] private AudioSource playerAudioSource;
+        [SerializeField] private AudioClip jumpClip;
+
         private void Update() 
         {
             HandleAction();
@@ -44,6 +48,7 @@ namespace Player
            animationHandler.Jump();
             if (jumpRequsted)
             {
+                ManagerRoot.AudioManager.PlaySfx(jumpClip);
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                 jumpRequsted = false;
             }
