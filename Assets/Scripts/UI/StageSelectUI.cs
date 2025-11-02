@@ -75,11 +75,11 @@ public class StageSelectUI : UIBase
         }
     }
 
-    private bool IsStageUnlocked(int stageNumber)
+    private bool IsStageUnlocked(int _stageNumber)
     {
-        if (stageNumber == 1) return true;
+        if (_stageNumber == 1) return true;
 
-        int previousStage = stageNumber - 1;
+        int previousStage = _stageNumber - 1;
         return PlayerPrefs.GetInt($"Stage_{previousStage}_Cleared", 0) == 1;
     }
     #endregion
@@ -107,14 +107,14 @@ public class StageSelectUI : UIBase
     #endregion
 
     #region 버튼이벤트
-    private void OnStageButtonClicked(int stageNumber)
+    private void OnStageButtonClicked(int _stageNumber)
     {
-        if (!IsStageUnlocked(stageNumber))
+        if (!IsStageUnlocked(_stageNumber))
         {
             return;
         }
         Close();
-        ManagerRoot.SceneController.LoadStageScene(stageNumber);
+        ManagerRoot.SceneController.LoadStageScene(_stageNumber);
     }
 
     public void GoToMainButton()
