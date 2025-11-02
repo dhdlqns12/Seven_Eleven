@@ -24,13 +24,23 @@ public class OptionUI : UIBase
     [Header("키보드 세팅")]
     [SerializeField] private Button keySettingButton;
 
+    [Header("효과음")]
+    [SerializeField] private AudioClip clickbtn;
+
     protected override void SetupUI()
     {
-        if(ManagerRoot.AudioManager != null)
+
+    }
+
+    protected override void OnShow()
+    {
+        InitializeResolutionDropdown();
+
+        if (ManagerRoot.AudioManager != null)
         {
-            masterVolumeSlider.value = ManagerRoot.AudioManager.GetMasterVolume();
-            bgmVolumeSlider.value = ManagerRoot.AudioManager.GetBGMVolume();
-            sfxVolumeSlider.value = ManagerRoot.AudioManager.GetSFXVolume();
+            masterVolumeSlider.SetValueWithoutNotify(ManagerRoot.AudioManager.GetMasterVolume() * 100f);
+            bgmVolumeSlider.SetValueWithoutNotify(ManagerRoot.AudioManager.GetBGMVolume() * 100f);
+            sfxVolumeSlider.SetValueWithoutNotify(ManagerRoot.AudioManager.GetSFXVolume() * 100f);
 
             masterVolumeSliderText.text = Mathf.RoundToInt(masterVolumeSlider.value) + "%";
             bgmVolumeSliderText.text = Mathf.RoundToInt(bgmVolumeSlider.value) + "%";
@@ -49,7 +59,7 @@ public class OptionUI : UIBase
         bgmVolumeSlider?.onValueChanged.AddListener(BGMVolumeSlider);
         sfxVolumeSlider?.onValueChanged.AddListener(SFXVolumeSlider);
 
-        //screenDropdown?.onValueChanged.AddListener();
+        screenDropdown?.onValueChanged.AddListener(ScreenDropdown);
     }
 
     protected override void UnsubscribeEvents()
@@ -69,16 +79,19 @@ public class OptionUI : UIBase
     #region 버튼 메서드
     private void OptionExitButton()
     {
+        ManagerRoot.AudioManager.PlaySfx(clickbtn);
         ManagerRoot.UIManager.ClosePanel<OptionUI>();
     }
 
     private void SettingSaveButton()
     {
-        //Playerprefs로 해결?
+        ManagerRoot.AudioManager.PlaySfx(clickbtn);
+        PlayerPrefs.Save();
     }
 
     private void KeySettingButton()
     {
+        ManagerRoot.AudioManager.PlaySfx(clickbtn);
         ManagerRoot.UIManager.ShowPanel<KeySettingUI>();
     }
     #endregion
@@ -104,7 +117,19 @@ public class OptionUI : UIBase
     #endregion
 
     #region 드롭다운 메서드
+    private void ScreenDropdown(int index)
+    {
+        //효과음 재생
+        //인덱스로 해상도 가져오기
+        //게임매니저에 SetResolution() 호출
+    }
 
+    private void InitializeResolutionDropdown()
+    {
+        //해상도 리스트 정의
+        //드롭다운에 옵션 클리어/추가
+        //게임매니저 GetCurrentResolutionIndex()로 현재 선택
+    }
     #endregion
 
 }

@@ -20,9 +20,12 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip[] sfxClips;
 
     private bool isMuted = false;
-    private float lastMasterVolume;
 
-    private void Awake()
+    private float currentMasterVolume;
+    private float currentBGMVolume;
+    private float currentSFXVolume;
+
+    private void Start()
     {
         LoadAudioSetting();
     }
@@ -40,11 +43,14 @@ public class AudioManager : MonoBehaviour
     private void OnsceneLoaded(Scene scene, LoadSceneMode mode)
     {
         PlayBGM(scene.buildIndex);
+        LoadAudioSetting();
     }
 
     #region 볼륨 설정
     public void SetMasterVolume(float volume)
     {
+        currentMasterVolume = volume;
+
         if (volume == 0)
         {
             audioMixer.SetFloat("MasterVolume", -80f);
@@ -59,6 +65,8 @@ public class AudioManager : MonoBehaviour
 
     public void SetBGMVolume(float volume)
     {
+        currentBGMVolume = volume;
+
         if (volume == 0)
         {
             audioMixer.SetFloat("BGMVolume", -80f);
@@ -73,6 +81,8 @@ public class AudioManager : MonoBehaviour
 
     public void SetSFXVolume(float volume)
     {
+        currentSFXVolume = volume;
+
         if (volume == 0)
         {
             audioMixer.SetFloat("SFXVolume", -80f);
@@ -87,13 +97,29 @@ public class AudioManager : MonoBehaviour
 
     private void LoadAudioSetting()
     {
-        float mastervolume = PlayerPrefs.GetFloat("MasterVolume", 1f);
-        float bgmVolume = PlayerPrefs.GetFloat("BGMVolume", 1f);
-        float sfxVolume = PlayerPrefs.GetFloat("SFXVolume", 1f);
+        float master = PlayerPrefs.GetFloat("MasterVolume", 1f);
+        float bgm = PlayerPrefs.GetFloat("BGMVolume", 1f);
+        float sfx = PlayerPrefs.GetFloat("SFXVolume", 1f);
 
-        SetMasterVolume(mastervolume);
-        SetBGMVolume(bgmVolume);
-        SetSFXVolume(sfxVolume);
+        VolumeMixerSetting("MasterVolume", master);
+        VolumeMixerSetting("BGMVolume", bgm);
+        VolumeMixerSetting("SFXVolume", sfx);
+    }
+
+    private void VolumeMixerSetting(string paramName, float volume)
+    {
+        float db;
+
+        if (volume == 0)
+        {
+            db = -80f;
+        }
+        else
+        {
+            db = Mathf.Log10(volume) * 20;
+        }
+
+        audioMixer.SetFloat(paramName, db);
     }
 
     public float GetMasterVolume() => PlayerPrefs.GetFloat("MasterVolume", 1f);
@@ -104,15 +130,24 @@ public class AudioManager : MonoBehaviour
     #region BGM 관리
     public void PlayBGM(int index)
     {
-        if (bgmClips.Length > 0 && index < bgmClips.Length)
+        if (bgmClips.Length == 0 || index >= bgmClips.Length)
         {
-            if (bgmSource.clip == bgmClips[index] && bgmSource.isPlaying)
-                return;
-
-            bgmSource.clip = bgmClips[index];
-            bgmSource.loop = true;
-            bgmSource.Play();
+            return;
         }
+
+        if (bgmClips[index] == null)
+        {
+            return;
+        }
+
+        if (bgmSource.clip == bgmClips[index] && bgmSource.isPlaying)
+        {
+            return;
+        }
+
+        bgmSource.clip = bgmClips[index];
+        bgmSource.loop = true;
+        bgmSource.Play();
     }
     #endregion
 
@@ -122,33 +157,14 @@ public class AudioManager : MonoBehaviour
         if (clip != null && sfxSource != null)
         {
             sfxSource.PlayOneShot(clip);
-            Debug.Log("효과음 재생");
         }
     }
     #endregion
 
     #region 뮤트 기능
-    public void AudioMute()
+    public void SetBGMMute(bool mute)
     {
-        isMuted = !isMuted;
-
-        if (isMuted)
-        {
-            audioMixer.SetFloat("MasterVolume", -80f);
-            PlayerPrefs.SetInt("Muted", 1);
-        }
-        else
-        {
-            SetMasterVolume(lastMasterVolume);
-            PlayerPrefs.SetInt("Muted", 0);
-        }
-
-        PlayerPrefs.Save();
-    }
-
-    public bool IsMuted()
-    {
-        return isMuted;
+        AudioListener.volume = mute ? 1 : 0;
     }
     #endregion
 }

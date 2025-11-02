@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 39635020}
   - component: {fileID: 39635019}
   - component: {fileID: 39635018}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Static Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -305,7 +305,7 @@ Transform:
   m_GameObject: {fileID: 332387666}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1037093, y: 0.8961869, z: 0.04362363}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -324,7 +324,7 @@ GameObject:
   - component: {fileID: 1051191552}
   - component: {fileID: 1051191553}
   - component: {fileID: 1051191554}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: 'Sprite '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -340,7 +340,7 @@ Transform:
   m_GameObject: {fileID: 1051191551}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.1037093, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -407,7 +407,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 8d0595b3dd0c347cc8c1ed5e495c1d1d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -436,7 +436,8 @@ GameObject:
   - component: {fileID: 1529539555}
   - component: {fileID: 1529539554}
   - component: {fileID: 1529539556}
-  m_Layer: 0
+  - component: {fileID: 1529539557}
+  m_Layer: 7
   m_Name: Girl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -498,8 +499,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b88941bc8530c4950ac1e6d560c51ba2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
-  jumpForce: 5
+  speed: 5
+  jumpForce: 3
   movementDirection: {x: 0, y: 0}
   rb: {fileID: 1529539554}
   spriteRenderer: {fileID: 1051191554}
@@ -535,9 +536,21 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 1}
+  m_Offset: {x: 0.13229612, y: -0.025399923}
+  m_Size: {x: 0.52639645, y: 0.77843714}
   m_Direction: 0
+--- !u!114 &1529539557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529539552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c547a5e0ad5c7446e9ac089dc13ca2e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1739808182
 GameObject:
   m_ObjectHideFlags: 0
@@ -678,13 +691,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3081519840344201744, guid: ac409741ed79942c2aad24e7c1824527, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3270452080198110305, guid: ac409741ed79942c2aad24e7c1824527, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7115846915607100557, guid: ac409741ed79942c2aad24e7c1824527, type: 3}
       propertyPath: m_Name
       value: Boy
       objectReference: {fileID: 0}
     - target: {fileID: 7115846915607100557, guid: ac409741ed79942c2aad24e7c1824527, type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
