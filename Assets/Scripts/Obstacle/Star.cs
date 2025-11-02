@@ -8,10 +8,7 @@ public class Star : MonoBehaviour
 {
     bool isGetStar=false;
 
-
     static int StarGetcount;//추후 수정
-
-
 
 
     private void OnTriggerEnter2D(Collider2D _player)//플레이어기준으로 붙을 예정
