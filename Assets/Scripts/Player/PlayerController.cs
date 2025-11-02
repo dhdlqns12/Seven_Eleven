@@ -9,17 +9,28 @@ namespace Player
     {
         [SerializeField] protected float speed = 8f;
         [SerializeField] protected float jumpForce = 3f;
-        
+        private float lastJumpTime;
+        private float jumpCooldown;
+
         public Vector2 movementDirection;
         [SerializeField] public Rigidbody2D rb;
-        
+
         [SerializeField] protected SpriteRenderer spriteRenderer;
         protected bool jumpRequsted = false;
         public bool isGrounded = false;
 
-       [SerializeField]private AnimationHandler animationHandler;
+        [SerializeField] private AnimationHandler animationHandler;
 
-        private void Update() 
+        [Header("효과음")]
+        //[SerializeField] private AudioSource playerAudioSource;
+        [SerializeField] private AudioClip jumpClip;
+
+        private void Awake()
+        {
+            Init();
+        }
+
+        private void Update()
         {
             HandleAction();
             Color rayColor = isGrounded ? Color.green : Color.red;
@@ -30,27 +41,40 @@ namespace Player
             Move();
             Jump();
         }
-        private void Move() 
+
+        private void Init()
+        {
+            lastJumpTime = 0f;
+            jumpCooldown = 0.2f;
+        }
+
+        private void Move()
         {
             animationHandler.Run(movementDirection);
-            rb.velocity=new Vector2(movementDirection.x * speed, rb.velocity.y); 
+            rb.velocity = new Vector2(movementDirection.x * speed, rb.velocity.y);
         }
-        
-        
+
+
         protected void Jump()
         {
-            isGrounded = Physics2D.Raycast(transform.position, Vector2.down, 0.5f, LayerMask.GetMask("Ground"));
-           // Debug.Log($"jumpRequsted: {jumpRequsted}, isGrounded: {isGrounded}");
-           animationHandler.Jump();
-            if (jumpRequsted)
+            isGrounded = Physics2D.Raycast(transform.position, Vector2.down, 0.5f, LayerMask.GetMask("Ground")); ;
+            // Debug.Log($"jumpRequsted: {jumpRequsted}, isGrounded: {isGrounded}");
+
+            lastJumpTime += Time.deltaTime;
+
+            animationHandler.Jump();
+
+            if (jumpRequsted && lastJumpTime >= jumpCooldown)
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                 jumpRequsted = false;
+                lastJumpTime = 0f;
+                ManagerRoot.AudioManager.PlaySfx(jumpClip);
             }
         }
         public abstract void HandleAction();
     }
-    
-    
+
+
 }
 

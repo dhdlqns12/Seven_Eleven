@@ -27,24 +27,63 @@ public class StageClearUI : UIBase
     {
         restart_Btn?.onClick.AddListener(RestartButton);
         goToStageSelect_Btn?.onClick.AddListener(GoToStageSelectButton);
+        nextStage_Btn?.onClick.AddListener(NextStageButton);
     }
 
     protected override void UnsubscribeEvents()
     {
         restart_Btn?.onClick.RemoveAllListeners();
         goToStageSelect_Btn?.onClick.RemoveAllListeners();
+        nextStage_Btn?.onClick.RemoveAllListeners();
+    }
+    #endregion
+
+    #region 열고 닫을 때 작동하는 메서드
+    protected override void OnShow()
+    {
+        Time.timeScale = 0f; 
+    }
+
+    protected override void OnClose()
+    {
+        Time.timeScale = 1f;
     }
     #endregion
 
     #region 버튼 메서드
     private void RestartButton()
     {
+        Close();
         ManagerRoot.SceneController.RestartScene();
     }
 
     private void GoToStageSelectButton()
     {
+        Close();
         ManagerRoot.SceneController.LoadStageSelectScene();
+    }
+
+    private void NextStageButton()
+    {
+        Time.timeScale = 1f; 
+        Close();
+
+        string currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+        string numberPart = currentScene.Replace("Stage", "").Replace(" ", "");
+
+        if (int.TryParse(numberPart, out int currentStage))
+        {
+            int nextStage = currentStage + 1;
+
+            if (nextStage <= 5)
+            {
+                ManagerRoot.SceneController.LoadStageScene(nextStage);
+            }
+            else
+            {
+                ManagerRoot.SceneController.LoadStageSelectScene();
+            }
+        }
     }
     #endregion
 }

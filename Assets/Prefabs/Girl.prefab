@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8371043011619080041}
   m_Layer: 7
   m_Name: Girl
-  m_TagString: Untagged
+  m_TagString: Fire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55,6 +55,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 8416891902126948120}
   isGrounded: 0
   animationHandler: {fileID: 8371043011619080041}
+  jumpClip: {fileID: 8300000, guid: bd2aeb39af726f943b7c56bb63b76167, type: 3}
 --- !u!50 &8621893075873770660
 Rigidbody2D:
   serializedVersion: 4

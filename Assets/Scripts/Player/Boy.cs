@@ -34,17 +34,29 @@ namespace Player
 
         }
 
-        private void OnTriggerEnter2D(Collider2D Object) //장애물들과 충돌처리 코드 완료. 테스트 필요
+        private void OnTriggerEnter2D(Collider2D other) //장애물들과 충돌처리 코드 완료. 테스트 필요
         {
-            if (Object.CompareTag("RedWater"))
+            if (other.CompareTag("RedWater"))
             {
-                ManagerRoot.GameManager.isDie = true;
-                Debug.Log("용암에 충돌했습니다.");
+                ManagerRoot.GameManager.IsDie = true;
+                Debug.Log(ManagerRoot.GameManager.IsDie);
             }
 
-          
+            if(other.CompareTag("Flag_blue"))
+            {
+                ManagerRoot.GameManager.IsClear_2 = true;
+                Debug.Log(ManagerRoot.GameManager.IsClear_2);
+            }
         }
 
-      
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            if (other.CompareTag("Flag_blue"))
+            {
+                ManagerRoot.GameManager.IsClear_2 = false;
+                Debug.Log(ManagerRoot.GameManager.IsClear_2);
+            }
+        }
+
     }
 }

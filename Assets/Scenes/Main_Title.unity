@@ -130,6 +130,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4831640597993001743, guid: 8d822631639c52745a3aa86e6cffaaea, type: 3}
+      propertyPath: bgmClips.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4831640597993001743, guid: 8d822631639c52745a3aa86e6cffaaea, type: 3}
+      propertyPath: bgmClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 7c9048d388147f94382b55c564e4148d, type: 3}
+    - target: {fileID: 4831640597993001743, guid: 8d822631639c52745a3aa86e6cffaaea, type: 3}
+      propertyPath: bgmClips.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: f7ad7f6fce8f1cf41889c04a17e358b7, type: 3}
+    - target: {fileID: 4831640597993001743, guid: 8d822631639c52745a3aa86e6cffaaea, type: 3}
+      propertyPath: bgmClips.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 17f73fc973346a64ca7b62e925670cd4, type: 3}
+    - target: {fileID: 4831640597993001743, guid: 8d822631639c52745a3aa86e6cffaaea, type: 3}
+      propertyPath: bgmClips.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: f7ad7f6fce8f1cf41889c04a17e358b7, type: 3}
+    - target: {fileID: 4831640597993001743, guid: 8d822631639c52745a3aa86e6cffaaea, type: 3}
+      propertyPath: bgmClips.Array.data[7]
+      value: 
+      objectReference: {fileID: 8300000, guid: 17f73fc973346a64ca7b62e925670cd4, type: 3}
     - target: {fileID: 5256705500752138139, guid: 8d822631639c52745a3aa86e6cffaaea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

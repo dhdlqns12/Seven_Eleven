@@ -28,14 +28,28 @@ public class StageFailUI : UIBase
     }
     #endregion
 
+    #region 열고 닫을 때 작동하는 메서드
+    protected override void OnShow()
+    {
+        Time.timeScale = 0f;
+    }
+
+    protected override void OnClose()
+    {
+        Time.timeScale = 1f;
+    }
+    #endregion
+
     #region 버튼 메서드
     private void RestartButton()
     {
+        Close();
         ManagerRoot.SceneController.RestartScene();
     }
 
     private void GoToStageSelectButton()
     {
+        Close();
         ManagerRoot.SceneController.LoadStageSelectScene();
     }
     #endregion
