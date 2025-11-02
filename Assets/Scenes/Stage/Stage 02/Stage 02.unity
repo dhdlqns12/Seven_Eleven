@@ -409,6 +409,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1403257725}
     m_Modifications:
+    - target: {fileID: 237025557217790396, guid: 2b9bb1e4777cfe54f8b5aa8e80d5d4a1, type: 3}
+      propertyPath: m_GravityScale
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 338532657587318771, guid: 2b9bb1e4777cfe54f8b5aa8e80d5d4a1, type: 3}
       propertyPath: m_Name
       value: Box
@@ -778,6 +782,7 @@ GameObject:
   - component: {fileID: 400687697}
   - component: {fileID: 400687700}
   - component: {fileID: 400687699}
+  - component: {fileID: 400687701}
   m_Layer: 3
   m_Name: Tilemap
   m_TagString: Untagged
@@ -3288,12 +3293,31 @@ TilemapCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!251 &400687701
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400687695}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!4 &411658858 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6538442780727879530, guid: bd7fd329a87d36948b7c4eb7694d0472, type: 3}
@@ -3998,6 +4022,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6955576283811220706, guid: 72ec18c27180e443daa28fe46acfd9f8, type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4129,6 +4157,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flag_red
       objectReference: {fileID: 0}
+    - target: {fileID: 2138853464851750483, guid: 3ce519b84d1cce04f8c6af542e550daf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4150,6 +4182,10 @@ PrefabInstance:
     - target: {fileID: 158025578596578397, guid: a2d293254adaf164582d03b4e798863f, type: 3}
       propertyPath: m_Name
       value: Flag_blue
+      objectReference: {fileID: 0}
+    - target: {fileID: 158025578596578397, guid: a2d293254adaf164582d03b4e798863f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8759806461311511839, guid: a2d293254adaf164582d03b4e798863f, type: 3}
       propertyPath: m_LocalScale.x
@@ -4540,6 +4576,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1403257725}
     m_Modifications:
+    - target: {fileID: 237025557217790396, guid: 2b9bb1e4777cfe54f8b5aa8e80d5d4a1, type: 3}
+      propertyPath: m_GravityScale
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 338532657587318771, guid: 2b9bb1e4777cfe54f8b5aa8e80d5d4a1, type: 3}
       propertyPath: m_Name
       value: Box (2)
@@ -4720,6 +4760,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boy
       objectReference: {fileID: 0}
+    - target: {fileID: 8582590296576082844, guid: ac409741ed79942c2aad24e7c1824527, type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4853,6 +4897,74 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4797441249935988394, guid: 9abeca253283bab42a35b3f333da54e4, type: 3}
   m_PrefabInstance: {fileID: 1565757126}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1586713229
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1586713232}
+  - component: {fileID: 1586713231}
+  - component: {fileID: 1586713230}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1586713230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586713229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1586713231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586713229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &1586713232
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586713229}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1587430173
 GameObject:
   m_ObjectHideFlags: 0
@@ -4950,6 +5062,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1403257725}
     m_Modifications:
+    - target: {fileID: 237025557217790396, guid: 2b9bb1e4777cfe54f8b5aa8e80d5d4a1, type: 3}
+      propertyPath: m_GravityScale
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 338532657587318771, guid: 2b9bb1e4777cfe54f8b5aa8e80d5d4a1, type: 3}
       propertyPath: m_Name
       value: Box (1)
@@ -6156,3 +6272,4 @@ SceneRoots:
   - {fileID: 1511941664}
   - {fileID: 1055354291}
   - {fileID: 1403257725}
+  - {fileID: 1586713232}
