@@ -178,19 +178,124 @@ TextureImporter:
       name: redFlag_0
       rect:
         serializedVersion: 2
-        x: 27
-        y: 382
-        width: 157
-        height: 161
-      alignment: 0
+        x: 32
+        y: 384
+        width: 154
+        height: 160
+      alignment: 6
       pivot: {x: 0, y: 0}
-      border: {x: 4, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 32c6df0926e67eb4fa0d40d8f00636b3
       internalID: -1442934663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: redFlag_1
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 384
+        width: 158
+        height: 164
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4023ca5cd9b0a0648a9db072ec1831a2
+      internalID: -284675881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: redFlag_2
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 384
+        width: 168
+        height: 164
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 020d53cc37ce8a148b10409eed418222
+      internalID: -54710755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: redFlag_3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 146
+        width: 169
+        height: 158
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4c580a7a10d0c34d81c7e77b7fdbcdf
+      internalID: 1400644969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: redFlag_4
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 146
+        width: 177
+        height: 159
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c31f1dac5e824ff428fd880c2aaf2821
+      internalID: 584086473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: redFlag_5
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 146
+        width: 164
+        height: 159
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a55a3200b285a341a102ad0038bc151
+      internalID: -1889377976
       vertices: []
       indices: 
       edges: []
@@ -207,6 +312,11 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       redFlag_0: -1442934663
+      redFlag_1: -284675881
+      redFlag_2: -54710755
+      redFlag_3: 1400644969
+      redFlag_4: 584086473
+      redFlag_5: -1889377976
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
