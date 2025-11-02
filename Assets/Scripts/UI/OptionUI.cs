@@ -29,7 +29,14 @@ public class OptionUI : UIBase
 
     protected override void SetupUI()
     {
-        if(ManagerRoot.AudioManager != null)
+
+    }
+
+    protected override void OnShow()
+    {
+        InitializeResolutionDropdown();
+
+        if (ManagerRoot.AudioManager != null)
         {
             masterVolumeSlider.SetValueWithoutNotify(ManagerRoot.AudioManager.GetMasterVolume() * 100f);
             bgmVolumeSlider.SetValueWithoutNotify(ManagerRoot.AudioManager.GetBGMVolume() * 100f);
@@ -52,7 +59,7 @@ public class OptionUI : UIBase
         bgmVolumeSlider?.onValueChanged.AddListener(BGMVolumeSlider);
         sfxVolumeSlider?.onValueChanged.AddListener(SFXVolumeSlider);
 
-        //screenDropdown?.onValueChanged.AddListener();
+        screenDropdown?.onValueChanged.AddListener(ScreenDropdown);
     }
 
     protected override void UnsubscribeEvents()
@@ -110,7 +117,19 @@ public class OptionUI : UIBase
     #endregion
 
     #region 드롭다운 메서드
+    private void ScreenDropdown(int index)
+    {
+        //효과음 재생
+        //인덱스로 해상도 가져오기
+        //게임매니저에 SetResolution() 호출
+    }
 
+    private void InitializeResolutionDropdown()
+    {
+        //해상도 리스트 정의
+        //드롭다운에 옵션 클리어/추가
+        //게임매니저 GetCurrentResolutionIndex()로 현재 선택
+    }
     #endregion
 
 }

@@ -17,12 +17,15 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip[] bgmClips;
 
     [Header("SFX Clips")]
-    [SerializeField] private AudioClip sfxClips;
+    [SerializeField] private AudioClip[] sfxClips;
 
     private bool isMuted = false;
-    private float lastMasterVolume;
 
-    private void Awake()
+    private float currentMasterVolume;
+    private float currentBGMVolume;
+    private float currentSFXVolume;
+
+    private void Start()
     {
         LoadAudioSetting();
     }
@@ -40,12 +43,13 @@ public class AudioManager : MonoBehaviour
     private void OnsceneLoaded(Scene scene, LoadSceneMode mode)
     {
         PlayBGM(scene.buildIndex);
+        LoadAudioSetting();
     }
 
     #region 볼륨 설정
     public void SetMasterVolume(float volume)
     {
-        lastMasterVolume = volume;
+        currentMasterVolume = volume;
 
         if (volume == 0)
         {
@@ -61,6 +65,8 @@ public class AudioManager : MonoBehaviour
 
     public void SetBGMVolume(float volume)
     {
+        currentBGMVolume = volume;
+
         if (volume == 0)
         {
             audioMixer.SetFloat("BGMVolume", -80f);
@@ -75,6 +81,8 @@ public class AudioManager : MonoBehaviour
 
     public void SetSFXVolume(float volume)
     {
+        currentSFXVolume = volume;
+
         if (volume == 0)
         {
             audioMixer.SetFloat("SFXVolume", -80f);
@@ -89,23 +97,29 @@ public class AudioManager : MonoBehaviour
 
     private void LoadAudioSetting()
     {
-        float mastervolume = PlayerPrefs.GetFloat("MasterVolume", 1f);
-        float bgmVolume = PlayerPrefs.GetFloat("BGMVolume", 1f);
-        float sfxVolume = PlayerPrefs.GetFloat("SFXVolume", 1f);
+        float master = PlayerPrefs.GetFloat("MasterVolume", 1f);
+        float bgm = PlayerPrefs.GetFloat("BGMVolume", 1f);
+        float sfx = PlayerPrefs.GetFloat("SFXVolume", 1f);
 
-        lastMasterVolume = mastervolume;
-        isMuted = PlayerPrefs.GetInt("Muted", 0) == 1;
-        if (isMuted)
+        VolumeMixerSetting("MasterVolume", master);
+        VolumeMixerSetting("BGMVolume", bgm);
+        VolumeMixerSetting("SFXVolume", sfx);
+    }
+
+    private void VolumeMixerSetting(string paramName, float volume)
+    {
+        float db;
+
+        if (volume == 0)
         {
-            audioMixer.SetFloat("MasterVolume", -80f);
+            db = -80f;
         }
         else
         {
-            SetMasterVolume(mastervolume);
+            db = Mathf.Log10(volume) * 20;
         }
 
-        SetBGMVolume(bgmVolume);
-        SetSFXVolume(sfxVolume);
+        audioMixer.SetFloat(paramName, db);
     }
 
     public float GetMasterVolume() => PlayerPrefs.GetFloat("MasterVolume", 1f);
