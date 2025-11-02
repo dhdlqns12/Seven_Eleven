@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 8582590296576082844}
   - component: {fileID: 4494665425482118431}
   - component: {fileID: 6568234870585867911}
+  - component: {fileID: 7281400617731097294}
   m_Layer: 8
   m_Name: Boy
   m_TagString: Untagged
@@ -154,10 +155,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  jumpForce: 3
+  jumpForce: 4.5
   movementDirection: {x: 0, y: 0}
   rb: {fileID: 4494665425482118431}
   spriteRenderer: {fileID: 3270452080198110305}
+  isGrounded: 0
+  animationHandler: {fileID: 7281400617731097294}
 --- !u!50 &4494665425482118431
 Rigidbody2D:
   serializedVersion: 4
@@ -220,3 +223,15 @@ CapsuleCollider2D:
   m_Offset: {x: -0.03425336, y: -0.094284534}
   m_Size: {x: 0.5285444, y: 0.7375665}
   m_Direction: 0
+--- !u!114 &7281400617731097294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7115846915607100557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c547a5e0ad5c7446e9ac089dc13ca2e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
