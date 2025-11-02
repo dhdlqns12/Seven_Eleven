@@ -12,6 +12,9 @@ TagManager:
   - Flag_red
   - RedWater
   - Ice
+  - Flower
+  - Player_Fire
+  - Player_Water
   layers:
   - Default
   - TransparentFX

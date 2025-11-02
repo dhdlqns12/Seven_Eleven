@@ -28,7 +28,7 @@ public class Switch : ElevaterManager
 
     private void OnTriggerEnter2D(Collider2D _boxOrPlayer)
     {
-        if (_boxOrPlayer.CompareTag("Player") || _boxOrPlayer.CompareTag("Box"))
+        if (_boxOrPlayer.CompareTag("Player_Fire") || _boxOrPlayer.CompareTag("Box")|| _boxOrPlayer.CompareTag("Player_Water"))
         {
             isEnter = true;
             elevaterScript.SetActive(true); // 자기 프리팹 엘베만
@@ -37,7 +37,7 @@ public class Switch : ElevaterManager
     }
     private void OnTriggerExit2D(Collider2D _boxOrPlayer)
     {
-        if (_boxOrPlayer.CompareTag("Player") || _boxOrPlayer.CompareTag("Box"))
+        if (_boxOrPlayer.CompareTag("Player_Fire") || _boxOrPlayer.CompareTag("Box") || _boxOrPlayer.CompareTag("Player_Water"))
         {
             isEnter = false;
             elevaterScript.SetActive(false); // 자기 프리팹 엘베만

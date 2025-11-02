@@ -6,13 +6,13 @@ namespace Player
 {
     public class Boy : PlayerController
     {
+
         public override void HandleAction()
         {
             float horizontalInput = 0f;
             float verticalInput = 0f;
 
             jumpRequsted = false;
-
 
 
             if (isGrounded == true && Input.GetKey(KeyCode.W))
@@ -34,19 +34,28 @@ namespace Player
 
         }
 
-        private void OnTriggerEnter2D(Collider2D other) //장애물들과 충돌처리 코드 완료. 테스트 필요
+        private void OnTriggerEnter2D(Collider2D _other) //장애물들과 충돌처리 코드 완료. 테스트 필요
         {
-            if (other.CompareTag("RedWater"))
+            if (_other.CompareTag("RedWater"))
             {
                 ManagerRoot.GameManager.IsDie = true;
                 Debug.Log(ManagerRoot.GameManager.IsDie);
             }
 
-            if(other.CompareTag("Flag_blue"))
+            if(_other.CompareTag("Flag_blue"))
             {
                 ManagerRoot.GameManager.IsClear_2 = true;
                 Debug.Log(ManagerRoot.GameManager.IsClear_2);
             }
+
+            if (_other.CompareTag("Star"))
+            {
+                SetActive(false);
+                AddStar(1)
+            }
+
+
+
         }
 
         private void OnTriggerExit2D(Collider2D other)

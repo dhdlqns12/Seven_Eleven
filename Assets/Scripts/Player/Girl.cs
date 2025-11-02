@@ -32,26 +32,30 @@ namespace Player
             movementDirection = new Vector2(horizontalInput, verticalInput).normalized; 
         }
 
-        private void OnTriggerEnter2D(Collider2D other) //장애물들과 충돌처리 코드 완료. 테스트 필요
+        private void OnTriggerEnter2D(Collider2D _other) //장애물들과 충돌처리 코드 완료. 테스트 필요
         {
-            if (other.CompareTag("Water"))
+            if (_other.CompareTag("Water"))
             {
            
                 ManagerRoot.GameManager.IsDie = true;
                 Debug.Log("파도에 충돌했습니다.");
             }
 
-            if (other.CompareTag("Ice"))
+            if (_other.CompareTag("Ice"))
             {
-                other.gameObject.SetActive(false);
+                _other.gameObject.SetActive(false);
             }
 
-            if(other.CompareTag("Flag_red"))
+            if(_other.CompareTag("Flag_red"))
             {
                 ManagerRoot.GameManager.IsClear_1 = true;
                 Debug.Log(ManagerRoot.GameManager.IsClear_1);
             }
+
+
         }
+
+       
 
         private void OnTriggerExit2D(Collider2D other)
         {
