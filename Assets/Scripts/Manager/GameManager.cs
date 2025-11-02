@@ -1,20 +1,61 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public bool isDie = false;
+    private bool isDie;
     public bool isCollisionObstacle = false;
-    public bool isClear_1;  //소녀가 깃발에 닿았을 때
-    public bool isClear_2;  //소년이 깃발에 닿았을 때 isClear_1,2가 모두 true여야 스테이지 클리어
-    
-    //isdDie==true일 때 실패 UI 뜨는거 작성 부탁드려용
-    public void GameOver()
+    private bool isClear_1;  //소녀가 깃발에 닿았을 때
+    private bool isClear_2;  //소년이 깃발에 닿았을 때 isClear_1,2가 모두 true여야 스테이지 클리어
+
+
+    public bool IsClear_1
     {
-        ManagerRoot.UIManager.ShowPanel<StageFailUI>();
-        Time.timeScale = 0f;
+        get => isClear_1;
+        set
+        {
+            isClear_1 = value;
+            CheckStageClear();
+        }
+    }
+
+    public bool IsClear_2
+    {
+        get => isClear_2;
+        set
+        {
+            isClear_2 = value;
+            CheckStageClear();
+        }
+    }
+
+    public bool IsDie
+    {
+        get => isDie;
+        set
+        {
+            if (value && !isDie)
+            {
+                isDie = value;
+                GameOver();
+            }
+        }
+    }
+
+    private void OnDisable()
+    {
+        ResetStageFlags();
+    }
+
+    private void ResetStageFlags()
+    {
+        isClear_1 = false;
+        isClear_2 = false;
+        isDie = false;
     }
 
     /// <summary>
@@ -85,6 +126,60 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("ResolutionHeight", height);
         PlayerPrefs.SetInt("FullScreenMode", (int)mode);
         PlayerPrefs.Save();
+    }
+    #endregion
+
+    #region 스테이지 클리어, 죽음
+    private void CheckStageClear()
+    {
+        // 둘 다 true면
+        if (isClear_1 && isClear_2)
+        {
+            Debug.Log("스테이지 클리어!");
+            StageClear();
+        }
+    }
+
+    private void StageClear()
+    {
+        ManagerRoot.UIManager.ShowPanel<StageClearUI>();
+        Time.timeScale = 0f;
+
+        // 현재 스테이지 클리어 저장
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        int stageNumber = GetStageNumber(currentSceneName);
+
+        if (stageNumber > 0)
+        {
+            PlayerPrefs.SetInt($"Stage_{stageNumber}_Cleared", 1);
+            PlayerPrefs.Save();
+            Debug.Log($"Stage {stageNumber} 클리어 저장 완료");
+        }
+
+        isClear_1 = false;
+        isClear_2 = false;
+    }
+
+
+    private int GetStageNumber(string sceneName)
+    {
+        if (sceneName.Length >= 8 && sceneName.StartsWith("Stage "))
+        {
+            ReadOnlySpan<char> numberPart = sceneName.AsSpan(6);
+            if (int.TryParse(numberPart, out int number))
+            {
+                return number;
+            }
+        }
+        return 0;
+    }
+
+    public void GameOver()
+    {
+        ManagerRoot.UIManager.ShowPanel<StageFailUI>();
+        Time.timeScale = 0f;
+
+        isDie = false;
     }
     #endregion
 }

@@ -56,7 +56,7 @@ public class RedWater : MonoBehaviour
     {
         if (_player.CompareTag("Water"))
         {
-            ManagerRoot.GameManager.isDie = true;
+            ManagerRoot.GameManager.IsDie = true;
             Debug.Log("용암에 빠져 죽었습니다.");
         }
     }
