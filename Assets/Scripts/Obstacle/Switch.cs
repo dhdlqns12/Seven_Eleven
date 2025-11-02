@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Switch : MonoBehaviour
+public class Switch : ElevaterManager
 {
-    [SerializeField] private GameObject button;
     
+    [SerializeField] private Elevater elevaterScript;
+
     float ButtonMoveSpeed = 4f;
     Vector2 ButtonOriginPos;
     Vector2 ButtonPressPos;
 
     Rigidbody2D rb;
-
-    bool isEnter = false;//플레이어나 박스가 같이 눌러도 중복동작방지
 
     void Start()
     {
@@ -26,11 +25,13 @@ public class Switch : MonoBehaviour
         Vector2 ButtonPosTarget = isEnter ? ButtonPressPos : ButtonOriginPos;
         rb.MovePosition(Vector2.Lerp(rb.position, ButtonPosTarget, Time.fixedDeltaTime * ButtonMoveSpeed));//현재 위치와 타겟위치 사이를 자연스럽게 속도 맞춰서 위치 바꾸기
     }
+
     private void OnTriggerEnter2D(Collider2D _boxOrPlayer)
     {
-        if (_boxOrPlayer.CompareTag("Player")|| _boxOrPlayer.CompareTag("Box"))
+        if (_boxOrPlayer.CompareTag("Player") || _boxOrPlayer.CompareTag("Box"))
         {
             isEnter = true;
+            elevaterScript.SetActive(true); // 자기 프리팹 엘베만
             Debug.Log("버튼을 밟고 있습니다.");
         }
     }
@@ -39,6 +40,7 @@ public class Switch : MonoBehaviour
         if (_boxOrPlayer.CompareTag("Player") || _boxOrPlayer.CompareTag("Box"))
         {
             isEnter = false;
+            elevaterScript.SetActive(false); // 자기 프리팹 엘베만
             Debug.Log("버튼 충돌범위를 벗어났습니다.");
         }
     }

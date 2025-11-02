@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public bool isCollisionObstacle = false;
     private bool isClear_1;  //소녀가 깃발에 닿았을 때
     private bool isClear_2;  //소년이 깃발에 닿았을 때 isClear_1,2가 모두 true여야 스테이지 클리어
+    public bool isEnter=false;
 
 
     public bool IsClear_1
