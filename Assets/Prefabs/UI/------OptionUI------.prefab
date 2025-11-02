@@ -1429,7 +1429,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiType: 1
   optionExitButton: {fileID: 2606842260921656955}
-  settingSaveButton: {fileID: 2606842260921656955}
   masterVolumeSlider: {fileID: 3783335714450961870}
   masterVolumeSliderText: {fileID: 8980379710610340399}
   bgmVolumeSlider: {fileID: 4629940381858174919}
