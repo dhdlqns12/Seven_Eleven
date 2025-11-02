@@ -8,7 +8,6 @@ public class OptionUI : UIBase
 {
     [Header("옵션창")]
     [SerializeField] private Button optionExitButton;
-    [SerializeField] private Button settingSaveButton;
 
     [Header("사운드 세팅")]
     [SerializeField] private Slider masterVolumeSlider;
@@ -52,7 +51,6 @@ public class OptionUI : UIBase
     protected override void SubscribeEvents()
     {
         optionExitButton?.onClick.AddListener(OptionExitButton);
-        settingSaveButton?.onClick.AddListener(SettingSaveButton);
         keySettingButton?.onClick.AddListener(KeySettingButton);
 
         masterVolumeSlider?.onValueChanged.AddListener(MasterVolumeSlider);
@@ -65,7 +63,6 @@ public class OptionUI : UIBase
     protected override void UnsubscribeEvents()
     {
         optionExitButton?.onClick.RemoveAllListeners();
-        settingSaveButton?.onClick.RemoveAllListeners();
         keySettingButton?.onClick.RemoveAllListeners();
 
         masterVolumeSlider?.onValueChanged.RemoveAllListeners();
@@ -81,12 +78,6 @@ public class OptionUI : UIBase
     {
         ManagerRoot.AudioManager.PlaySfx(clickbtn);
         ManagerRoot.UIManager.ClosePanel<OptionUI>();
-    }
-
-    private void SettingSaveButton()
-    {
-        ManagerRoot.AudioManager.PlaySfx(clickbtn);
-        PlayerPrefs.Save();
     }
 
     private void KeySettingButton()
@@ -117,18 +108,70 @@ public class OptionUI : UIBase
     #endregion
 
     #region 드롭다운 메서드
+    private List<Resolution> resolutions = new List<Resolution>();
+
     private void ScreenDropdown(int index)
     {
-        //효과음 재생
+        ManagerRoot.AudioManager.PlaySfx(clickbtn);
+
         //인덱스로 해상도 가져오기
+        Resolution selectedResolution = resolutions[index];
+
         //게임매니저에 SetResolution() 호출
+        ManagerRoot.GameManager.SetResolution(selectedResolution.width, selectedResolution.height, FullScreenMode.Windowed);
     }
 
     private void InitializeResolutionDropdown()
     {
+        resolutions.Clear();
+        HashSet<string> addedResolutions = new HashSet<string>();
+
         //해상도 리스트 정의
+        foreach (Resolution item in Screen.resolutions)
+        {
+            if((item.width * 9 == item.height * 16) && item.width >= 1280)
+            {
+                string resolutionKey = item.width + "x" + item.height;
+
+                if (!addedResolutions.Contains(resolutionKey))
+                {
+                    resolutions.Add(item);
+                    addedResolutions.Add(resolutionKey);
+                } 
+            }
+        }
+
         //드롭다운에 옵션 클리어/추가
-        //게임매니저 GetCurrentResolutionIndex()로 현재 선택
+        List<string> options = new List<string>();
+        foreach(Resolution item in resolutions)
+        {
+            options.Add(item.width + " x " + item.height);
+        }
+
+        screenDropdown.ClearOptions();
+        screenDropdown.AddOptions(options);
+
+        //GetCurrentResolutionIndex()로 현재 해상도 선택
+        int currentIndex = GetCurrentResolutionIndex();
+        screenDropdown.SetValueWithoutNotify(currentIndex);
+    }
+
+    public int GetCurrentResolutionIndex()
+    {
+        //현재 해상도와 일치하는 인덱스 반환
+
+        int currentWidth = Screen.width;
+        int currentHeight = Screen.height;
+        
+        for(int i = 0; i < resolutions.Count; i++)
+        {
+            if(resolutions[i].width == currentWidth && resolutions[i].height == currentHeight)
+            {
+                return i;
+            }
+        }
+
+        return 0;
     }
     #endregion
 

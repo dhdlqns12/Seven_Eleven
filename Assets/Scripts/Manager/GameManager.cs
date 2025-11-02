@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
         stageStars["Stage3"] = 0;
         stageStars["Stage4"] = 0;
         stageStars["Stage5"] = 0;
+
+        LoadResolution(); //해상도 설정
     }
 
 
@@ -67,17 +69,21 @@ public class GameManager : MonoBehaviour
     private void LoadResolution()
     {
         //PlayerPrefs에서 불러와서 Screen.SetResolution() 호출
+        int width = PlayerPrefs.GetInt("ResolutionWidth", Screen.width);
+        int height = PlayerPrefs.GetInt("ResolutionHeight", Screen.height);
+        FullScreenMode mode = (FullScreenMode)PlayerPrefs.GetInt("FullScreenMode", (int)FullScreenMode.Windowed);
+
+        Screen.SetResolution(width, height, mode);
     }
 
-    public void SetResolution(int width, int height)
+    public void SetResolution(int width, int height, FullScreenMode mode)
     {
-        //Screen.SetResolution() 호출
-        //PlayerPrefs에 저장
-    }
+        Screen.SetResolution(width, height, mode);
 
-    public void GetCurrentResolutionIndex()
-    {
-        //현재 해상도와 일치하는 인덱스 반환
+        PlayerPrefs.SetInt("ResolutionWidth", width);
+        PlayerPrefs.SetInt("ResolutionHeight", height);
+        PlayerPrefs.SetInt("FullScreenMode", (int)mode);
+        PlayerPrefs.Save();
     }
     #endregion
 }
