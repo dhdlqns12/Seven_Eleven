@@ -11,6 +11,7 @@ TagManager:
   - Flag_blue
   - Flag_red
   - RedWater
+  - Ice
   layers:
   - Default
   - TransparentFX
