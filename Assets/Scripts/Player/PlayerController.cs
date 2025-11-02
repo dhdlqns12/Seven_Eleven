@@ -41,26 +41,8 @@ namespace Player
         
         private void OnTriggerEnter2D(Collider2D Object) //장애물들과 충돌처리 코드 완료. 테스트 필요
         {
-            if (Object.CompareTag("Box"))
-            {
-                ManagerRoot.GameManager.isDie = true;
-                Debug.Log("박스에 충돌했습니다.");
-            }
-            if (Object.CompareTag("RedWater"))
-            {
-                ManagerRoot.GameManager.isDie = true;
-                Debug.Log("용암에 충돌했습니다.");
-            }
-            if (Object.CompareTag("Water"))
-            {
-                ManagerRoot.GameManager.isDie = true;
-                Debug.Log("물에 충돌했습니다.");
-            }
-            if (Object.CompareTag("BlueWater"))
-            {
-                ManagerRoot.GameManager.isDie = true;
-                Debug.Log("파도에 충돌했습니다.");
-            }
+           
+            
 
             //(채윤님 Star완성되시면 이 주석 지우시면 됩니다!
             //if (Object.CompareTag("Star"))
@@ -72,7 +54,7 @@ namespace Player
         protected void Jump() 
         {
             isGrounded = Physics2D.Raycast(transform.position, Vector2.down, 0.5f, LayerMask.GetMask("Ground"));
-            Debug.Log($"jumpRequsted: {jumpRequsted}, isGrounded: {isGrounded}");
+           // Debug.Log($"jumpRequsted: {jumpRequsted}, isGrounded: {isGrounded}");
             
             if (jumpRequsted)
             {
