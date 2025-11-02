@@ -10,6 +10,7 @@ TagManager:
   - Box
   - Flag_blue
   - Flag_red
+  - RedWater
   layers:
   - Default
   - TransparentFX

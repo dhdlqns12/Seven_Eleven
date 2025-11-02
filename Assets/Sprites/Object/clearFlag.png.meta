@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fa051c8d0170ccd4c806acb6ff3cc1e6
+guid: 401aa79fceb9a844c96d6edd10221ad8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -175,34 +175,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: blueFlag_0
+      name: clearFlag_0
       rect:
         serializedVersion: 2
-        x: 45
-        y: 350
-        width: 179
-        height: 178
-      alignment: 6
-      pivot: {x: 0, y: 0}
-      border: {x: 1, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b637ad986104b2f439bf2b871fe442c3
-      internalID: 965428687
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: blueFlag_1
-      rect:
-        serializedVersion: 2
-        x: 251
-        y: 350
-        width: 179
-        height: 178
+        x: 30
+        y: 382
+        width: 159
+        height: 167
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,20 +189,83 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40efcb96a1723de498e4bd33f577ccee
-      internalID: 1061136012
+      spriteID: 9965653f899684445a3672641209336b
+      internalID: -919596467
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: blueFlag_2
+      name: clearFlag_1
       rect:
         serializedVersion: 2
-        x: 464
-        y: 350
+        x: 211
+        y: 382
+        width: 159
+        height: 169
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62e6f9e08feec8b48a1a91164517d49a
+      internalID: 1997741674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clearFlag_2
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 382
+        width: 171
+        height: 166
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dab3601523fa3e4d8f239a6bcf77a65
+      internalID: -806362086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clearFlag_3
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 145
+        width: 171
+        height: 160
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c35b318183fc174a9a90fef160b2a8d
+      internalID: 1337861959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clearFlag_4
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 144
         width: 182
-        height: 178
+        height: 162
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,20 +273,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 298e81fb6bc038f418fff480df8cf194
-      internalID: 196333748
+      spriteID: 233cbad4fbba86146b5e6277ff63590a
+      internalID: 1031235492
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: blueFlag_3
+      name: clearFlag_5
       rect:
         serializedVersion: 2
-        x: 46
-        y: 82
-        width: 187
-        height: 179
+        x: 403
+        y: 145
+        width: 171
+        height: 161
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -252,50 +294,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0d5e1e28d4d62e41898165b7d900270
-      internalID: 1773266214
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: blueFlag_4
-      rect:
-        serializedVersion: 2
-        x: 250
-        y: 85
-        width: 199
-        height: 174
-      alignment: 6
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3c422e39242bcb04fb137b0a45275723
-      internalID: 1733878290
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: blueFlag_5
-      rect:
-        serializedVersion: 2
-        x: 462
-        y: 85
-        width: 193
-        height: 177
-      alignment: 6
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 343ec8652d34fd44aade3897d1bf6ef4
-      internalID: 38966594
+      spriteID: bacf4dbddf567bd45b798425e33bdf85
+      internalID: 107272493
       vertices: []
       indices: 
       edges: []
@@ -311,12 +311,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      blueFlag_0: 965428687
-      blueFlag_1: 1061136012
-      blueFlag_2: 196333748
-      blueFlag_3: 1773266214
-      blueFlag_4: 1733878290
-      blueFlag_5: 38966594
+      clearFlag_0: -919596467
+      clearFlag_1: 1997741674
+      clearFlag_2: -806362086
+      clearFlag_3: 1337861959
+      clearFlag_4: 1031235492
+      clearFlag_5: 107272493
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
