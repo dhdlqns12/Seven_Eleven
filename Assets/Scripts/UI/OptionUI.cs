@@ -20,6 +20,9 @@ public class OptionUI : UIBase
     [Header("해상도 세팅")]
     [SerializeField] private TMP_Dropdown screenDropdown;
 
+    [Header("키보드 세팅")]
+    [SerializeField] private Button keySettingButton;
+
     [Header("효과음")]
     [SerializeField] private AudioClip clickbtn;
 
@@ -48,6 +51,7 @@ public class OptionUI : UIBase
     protected override void SubscribeEvents()
     {
         optionExitButton?.onClick.AddListener(OptionExitButton);
+        keySettingButton?.onClick.AddListener(KeySettingButton);
 
         masterVolumeSlider?.onValueChanged.AddListener(MasterVolumeSlider);
         bgmVolumeSlider?.onValueChanged.AddListener(BGMVolumeSlider);
@@ -59,6 +63,7 @@ public class OptionUI : UIBase
     protected override void UnsubscribeEvents()
     {
         optionExitButton?.onClick.RemoveAllListeners();
+        keySettingButton?.onClick.RemoveAllListeners();
 
         masterVolumeSlider?.onValueChanged.RemoveAllListeners();
         bgmVolumeSlider?.onValueChanged.RemoveAllListeners();
@@ -73,6 +78,12 @@ public class OptionUI : UIBase
     {
         ManagerRoot.AudioManager.PlaySfx(clickbtn);
         ManagerRoot.UIManager.ClosePanel<OptionUI>();
+    }
+
+    private void KeySettingButton()
+    {
+        ManagerRoot.AudioManager.PlaySfx(clickbtn);
+        ManagerRoot.UIManager.ShowPanel<KeySettingUI>();
     }
     #endregion
 
