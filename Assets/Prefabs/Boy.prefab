@@ -161,7 +161,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 3270452080198110305}
   isGrounded: 0
   animationHandler: {fileID: 7281400617731097294}
-  jumpClip: {fileID: 8300000, guid: bd2aeb39af726f943b7c56bb63b76167, type: 3}
+  jumpClip: {fileID: 8300000, guid: 4269f247276946849a0d6492590fdff4, type: 3}
 --- !u!50 &4494665425482118431
 Rigidbody2D:
   serializedVersion: 4

@@ -10,6 +10,9 @@ public class Star : MonoBehaviour
 
     static int StarGetcount;//추후 수정
 
+    [Header("효과음")]
+    [SerializeField] private AudioClip starSound;
+
 
     private void OnTriggerEnter2D(Collider2D _player)//플레이어기준으로 붙을 예정
     {
@@ -21,6 +24,8 @@ public class Star : MonoBehaviour
             StarGetcount+=1;
             PlayerPrefs.SetInt("GetStarSave", StarGetcount);
             PlayerPrefs.Save();
+
+            ManagerRoot.AudioManager.PlaySfx(starSound);
 
 
             int starDebug=PlayerPrefs.GetInt("GetStarSave");

@@ -55,7 +55,7 @@ MonoBehaviour:
   uiType: 0
   restart_Btn: {fileID: 7035977211419448139}
   goToStageSelect_Btn: {fileID: 6824689865853189380}
-  clickbtn: {fileID: 8300000, guid: e593666599ab81849999cd3bb5c69609, type: 3}
+  clickbtn: {fileID: 8300000, guid: 30386e7ce7773b549a31c96456dadb16, type: 3}
 --- !u!1 &4827441907663668897
 GameObject:
   m_ObjectHideFlags: 0

@@ -322,7 +322,7 @@ MonoBehaviour:
   soundOnOffButtonImage: {fileID: 0}
   soundOnSprite: {fileID: 21300000, guid: ded61308cb376a249b053c9d21b14a40, type: 3}
   soundOffSprite: {fileID: 21300000, guid: 28db6fc6b40971940828d58332f40d14, type: 3}
-  clickbtn: {fileID: 8300000, guid: e593666599ab81849999cd3bb5c69609, type: 3}
+  clickbtn: {fileID: 8300000, guid: 30386e7ce7773b549a31c96456dadb16, type: 3}
 --- !u!1 &2117737517091834573
 GameObject:
   m_ObjectHideFlags: 0

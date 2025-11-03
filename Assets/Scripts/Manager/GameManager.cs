@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     
     [Header("효과음")]
     [SerializeField] private AudioClip dieSound;
+    [SerializeField] private AudioClip clearSound;
 
     public bool IsClear_1
     {
@@ -149,6 +150,7 @@ public class GameManager : MonoBehaviour
 
     private void StageClear()
     {
+        ManagerRoot.AudioManager.PlaySfx(clearSound);
         ManagerRoot.UIManager.ShowPanel<StageClearUI>();
         Time.timeScale = 0f;
 
