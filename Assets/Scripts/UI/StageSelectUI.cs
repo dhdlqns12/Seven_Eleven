@@ -18,6 +18,9 @@ public class StageSelectUI : UIBase
     [SerializeField] private Sprite[] scores;//인덱스는 0,1,2,3
     [SerializeField] private Image[] currentScores;//인덱스는 0,1,2,3
 
+    [Header("효과음")]
+    [SerializeField] private AudioClip clickbtn;
+
     protected override void SetupUI()
     {
 
@@ -115,12 +118,14 @@ public class StageSelectUI : UIBase
         }
         Close();
         ManagerRoot.SceneController.LoadStageScene(_stageNumber);
+        ManagerRoot.AudioManager.PlaySfx(clickbtn);
     }
 
     public void GoToMainButton()
     {
         Close();
         ManagerRoot.SceneController.LoadMainScene();
+        ManagerRoot.AudioManager.PlaySfx(clickbtn);
     }
     #endregion
 }

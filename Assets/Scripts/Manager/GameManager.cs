@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
     private bool isClear_2;  //소년이 깃발에 닿았을 때 isClear_1,2가 모두 true여야 스테이지 클리어
     public bool isEnter=false;
 
+    [Header("효과음")]
+    [SerializeField] private AudioClip dieSound;
+
     public bool IsClear_1
     {
         get => isClear_1;
@@ -188,6 +191,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        ManagerRoot.AudioManager.PlaySfx(dieSound);
         ManagerRoot.UIManager.ShowPanel<StageFailUI>();
         Time.timeScale = 0f;
 
