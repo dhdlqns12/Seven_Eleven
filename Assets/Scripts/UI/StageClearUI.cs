@@ -17,6 +17,9 @@ public class StageClearUI : UIBase
     [SerializeField] private Sprite activeStar; // 활성화 된 별
     [SerializeField] private Sprite inActiveStar; // 비활성화 된 별
 
+    [Header("효과음")]
+    [SerializeField] private AudioClip clickbtn;
+
     protected override void SetupUI()
     {
 
@@ -55,12 +58,14 @@ public class StageClearUI : UIBase
     {
         Close();
         ManagerRoot.SceneController.RestartScene();
+        ManagerRoot.AudioManager.PlaySfx(clickbtn);
     }
 
     private void GoToStageSelectButton()
     {
         Close();
         ManagerRoot.SceneController.LoadStageSelectScene();
+        ManagerRoot.AudioManager.PlaySfx(clickbtn);
     }
 
     private void NextStageButton()
@@ -84,6 +89,7 @@ public class StageClearUI : UIBase
                 ManagerRoot.SceneController.LoadStageSelectScene();
             }
         }
+        ManagerRoot.AudioManager.PlaySfx(clickbtn);
     }
     #endregion
 }
