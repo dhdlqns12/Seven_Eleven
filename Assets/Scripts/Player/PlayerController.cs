@@ -20,7 +20,8 @@ namespace Player
         public bool isGrounded = false;
 
         [SerializeField] private AnimationHandler animationHandler;
-
+        
+        
         [Header("효과음")]
         //[SerializeField] private AudioSource playerAudioSource;
         [SerializeField] private AudioClip jumpClip;
@@ -34,13 +35,15 @@ namespace Player
         private void Update()
         {
             HandleAction();
-            Color rayColor = isGrounded ? Color.green : Color.red;
         }
 
         private void FixedUpdate() //물리효과(rigidbody)가 적용된 오브젝트를 조정할 때
         {
-            Move();
-            Jump();
+            if (ManagerRoot.GameManager.isMove_Player==true)
+            {
+                Move();
+                Jump();
+            }
         }
         
 
@@ -48,6 +51,7 @@ namespace Player
         {
             lastJumpTime = 0f;
             jumpCooldown = 0.2f;
+        
         }
 
         protected void Dead()
