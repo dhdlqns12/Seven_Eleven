@@ -39,7 +39,7 @@ namespace Player
 
         private void FixedUpdate() //물리효과(rigidbody)가 적용된 오브젝트를 조정할 때
         {
-            if (ManagerRoot.GameManager.isMove_Player==true)
+            if (ManagerRoot.GameManager.IsDie==false)
             {
                 Move();
                 Jump();

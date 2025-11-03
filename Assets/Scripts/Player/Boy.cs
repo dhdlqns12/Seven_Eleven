@@ -38,10 +38,10 @@ namespace Player
         {
             if (_other.CompareTag("RedWater"))
             {
+                ManagerRoot.GameManager.IsDie = true;
                 Dead();
-                ManagerRoot.GameManager.isMove_Player =false;
                 yield return new WaitForSeconds(2f);
-                ManagerRoot.GameManager.IsDie=true;
+                ManagerRoot.GameManager.GameOver();
                 Debug.Log("용암에 닿았습니다.");
             }
 

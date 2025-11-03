@@ -36,10 +36,10 @@ namespace Player
         {
             if (_other.CompareTag("Water"))
             {
-                Dead();
-                ManagerRoot.GameManager.isMove_Player =false;
-                yield return new WaitForSeconds(2f);
                 ManagerRoot.GameManager.IsDie=true;
+                Dead();
+                yield return new WaitForSeconds(2f);
+                ManagerRoot.GameManager.GameOver();
                 Debug.Log("파도에 충돌했습니다.");
             }
 
