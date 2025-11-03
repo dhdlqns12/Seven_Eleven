@@ -16,17 +16,22 @@ public class StageSelectUI : UIBase
 
     [Header("점수")]
     [SerializeField] private Sprite[] scores;//인덱스는 0,1,2,3
-    [SerializeField] private Image[] currentScores;//인덱스는 0,1,2,3
+    [SerializeField] private Image[] currentScores;//인덱스는 0,1,2,3,4
 
     [Header("효과음")]
     [SerializeField] private AudioClip clickbtn;
 
     protected override void SetupUI()
     {
-
+        
     }
 
-    string[] stageNames = { "Stage1", "Stage2", "Stage3", "Stage4", "Stage5" };
+    private void Start()
+    {
+        Show();
+    }
+
+    string[] stageNames = { "Stage 01", "Stage 02", "Stage 03", "Stage 04", "Stage 05" };
 
     public void GetScore()
     {
@@ -65,6 +70,7 @@ public class StageSelectUI : UIBase
     protected override void OnShow()
     {
         UpdateStageButtons();
+        
     }
 
     private void UpdateStageButtons()

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Player
 {
@@ -53,8 +54,10 @@ namespace Player
 
             if (_other.CompareTag("Star"))
             {
-               // SetActive(false);
-               // AddStar(1)
+                _other.gameObject.SetActive(false);
+
+                string CurrentSceneName = SceneManager.GetActiveScene().name;
+                ManagerRoot.GameManager.AddStar(CurrentSceneName);
             }
 
 

@@ -1701,7 +1701,7 @@ MonoBehaviour:
   - {fileID: 6478920029899542269}
   - {fileID: 7873762290742749784}
   - {fileID: 5382399691656741737}
-  clickbtn: {fileID: 8300000, guid: e593666599ab81849999cd3bb5c69609, type: 3}
+  clickbtn: {fileID: 8300000, guid: 30386e7ce7773b549a31c96456dadb16, type: 3}
 --- !u!1 &6089604060837709649
 GameObject:
   m_ObjectHideFlags: 0

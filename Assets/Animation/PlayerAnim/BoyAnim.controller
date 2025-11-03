@@ -131,7 +131,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 'Sprite '
+  m_Name: BoyAnim
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: IsRun
@@ -338,7 +338,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 9125148203992830483}
-    m_Position: {x: 830, y: 110, z: 0}
+    m_Position: {x: 880, y: 100, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8023177119283245432}
     m_Position: {x: 360, y: 110, z: 0}
@@ -347,7 +347,7 @@ AnimatorStateMachine:
     m_Position: {x: 620, y: -20, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 498127847516401308}
-    m_Position: {x: 650, y: 260, z: 0}
+    m_Position: {x: 620, y: 330, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []

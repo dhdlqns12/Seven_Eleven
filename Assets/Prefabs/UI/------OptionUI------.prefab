@@ -1436,7 +1436,7 @@ MonoBehaviour:
   sfxVolumeSlider: {fileID: 6280713644434052513}
   sfxVolumeSliderText: {fileID: 6569654779154929778}
   screenDropdown: {fileID: 353285564005030930}
-  clickbtn: {fileID: 8300000, guid: e593666599ab81849999cd3bb5c69609, type: 3}
+  clickbtn: {fileID: 8300000, guid: 30386e7ce7773b549a31c96456dadb16, type: 3}
 --- !u!1 &2423995202472994965
 GameObject:
   m_ObjectHideFlags: 0

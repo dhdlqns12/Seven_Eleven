@@ -7,41 +7,76 @@ public class Switch : ElevaterManager
     
     [SerializeField] private Elevater elevaterScript;
 
-    float ButtonMoveSpeed = 4f;
+    float ButtonMoveSpeed = 1f;
     Vector2 ButtonOriginPos;
     Vector2 ButtonPressPos;
+    
+    float time = 0f;
 
-    Rigidbody2D rb;
-
+    
     void Start()
     {
-        rb = button.GetComponent<Rigidbody2D>();
-        ButtonOriginPos = rb.position;//현재 버튼의 좌표 기록
-        ButtonPressPos = ButtonOriginPos + new Vector2(0, -0.12f);//밟았을 때 위치//왜 클래스에서 선언하면 오류?
+        ButtonOriginPos = transform.localPosition;//현재 버튼의 좌표 기록
+        ButtonPressPos = ButtonOriginPos + new Vector2(0, -0.12f);//
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        Vector2 ButtonPosTarget = isEnter ? ButtonPressPos : ButtonOriginPos;
-        rb.MovePosition(Vector2.Lerp(rb.position, ButtonPosTarget, Time.fixedDeltaTime * ButtonMoveSpeed));//현재 위치와 타겟위치 사이를 자연스럽게 속도 맞춰서 위치 바꾸기
-    }
+        Vector2 pos;
+        if(isEnterCount>0)
+        {
+            pos = ButtonPressPos;
+        }
+        else
+        {
+            pos = ButtonOriginPos;
+        }
 
+        time += Time.deltaTime;
+        float rate = time / ButtonMoveSpeed;
+        rate = Mathf.Clamp01(rate);
+        transform.localPosition = Vector2.Lerp(transform.localPosition, pos, rate);
+        //rb.MovePosition(Vector2.Lerp(rb.position, ButtonPosTarget, Time.fixedDeltaTime * ButtonMoveSpeed));//현재 위치와 타겟위치 사이를 자연스럽게 속도 맞춰서 위치 바꾸기
+    }
+   
+    
+    
     private void OnTriggerEnter2D(Collider2D _boxOrPlayer)
     {
+        //플레이어 불, 박스, 플레이어 물 태그가 붙어있는 오브젝트와 충돌하는지 체크하기
         if (_boxOrPlayer.CompareTag("Player_Fire") || _boxOrPlayer.CompareTag("Box")|| _boxOrPlayer.CompareTag("Player_Water"))
         {
-            isEnter = true;
-            elevaterScript.SetActive(true); // 자기 프리팹 엘베만
+            if (isEnterCount <= 0)
+            {
+                time = 0f;
+                elevaterScript.ResetTime();
+                elevaterScript.SetActive(true);
+            }
+           
+            EnterColliderCheack();
+            //elevaterScript.SetActive(isEnterCount>0);
+
+
             Debug.Log("버튼을 밟고 있습니다.");
         }
     }
     private void OnTriggerExit2D(Collider2D _boxOrPlayer)
     {
+        //플레이어 불, 박스, 플레이어 물 태그가 붙어있는 오브젝트와 충돌범위를 벗어났는지 체크하기
         if (_boxOrPlayer.CompareTag("Player_Fire") || _boxOrPlayer.CompareTag("Box") || _boxOrPlayer.CompareTag("Player_Water"))
         {
-            isEnter = false;
-            elevaterScript.SetActive(false); // 자기 프리팹 엘베만
-            Debug.Log("버튼 충돌범위를 벗어났습니다.");
+            ExitColliderCheack();
+            //elevaterScript.SetActive(isEnterCount > 0);
+
+            if (isEnterCount <= 0)
+            {
+                time = 0f;
+                elevaterScript.SetActive(false);
+                elevaterScript.ResetTime();
+
+            }
+            
+                Debug.Log("버튼 충돌범위를 벗어났습니다.");
         }
     }
 
