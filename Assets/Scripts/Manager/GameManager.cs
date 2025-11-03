@@ -2,7 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.InputSystem.Utilities;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -70,19 +72,34 @@ public class GameManager : MonoBehaviour
         isDie = false;
     }
 
-    /// ///////////////////////star 작성중///
 
     public Dictionary<string, int> stageStars = new Dictionary<string, int>();
-   
+
+    string[] stageNames = { "Stage 01", "Stage 02", "Stage 03", "Stage 04", "Stage 05" };
+    string stageKey;
+
+
+    private void SetScore()
+    {
+        for (int i = 0; i < stageNames.Length; i++)
+        {
+            stageKey = stageNames[i];
+            int savedValue = PlayerPrefs.GetInt(stageKey, 0);
+
+            if (stageStars.ContainsKey(stageKey))
+            {
+                stageStars[stageKey] = savedValue;
+            }
+            else
+            {
+                stageStars.Add(stageKey, savedValue);
+            }
+        }
+    }
 
     void Awake()
     {
-        stageStars["Stage1"] = 0;
-        stageStars["Stage2"] = 0;
-        stageStars["Stage3"] = 0;
-        stageStars["Stage4"] = 0;
-        stageStars["Stage5"] = 0;
-
+        SetScore();
         LoadResolution(); //해상도 설정
     }
 
@@ -109,11 +126,6 @@ public class GameManager : MonoBehaviour
         }
 
     }
-
-
-   
-    /// //////////////////////////////////////////////////////////////////////////
-    
 
     #region 해상도 설정
     private void LoadResolution()
@@ -145,6 +157,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("스테이지 클리어!");
             StageClear();
+            SetScore();
         }
     }
 
@@ -164,10 +177,15 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.Save();
             Debug.Log($"Stage {stageNumber} 클리어 저장 완료");
         }
+        
+        StageSelectUI stageSelectUI = ManagerRoot.UIManager.GetPanel<StageSelectUI>();
+        stageSelectUI.GetScore();
 
         isClear_1 = false;
         isClear_2 = false;
     }
+
+
 
 
     private int GetStageNumber(string sceneName)

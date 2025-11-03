@@ -1,12 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 namespace Player
 {
     public class Girl : PlayerController
     {
+        [Header("효과음")]
+        [SerializeField] private AudioClip starSound;
+        [SerializeField] private AudioClip waterSound;
+
+
         public override void HandleAction()
         {
             float horizontalInput = 0f; //수평이동
@@ -36,11 +42,17 @@ namespace Player
         {
             if (_other.CompareTag("Water"))
             {
+                ManagerRoot.AudioManager.PlaySfx(waterSound);
                 ManagerRoot.GameManager.IsDie=true;
                 Dead();
                 yield return new WaitForSeconds(2f);
                 ManagerRoot.GameManager.GameOver();
                 Debug.Log("파도에 충돌했습니다.");
+            }
+
+            if (_other.CompareTag("RedWater"))
+            {
+                ManagerRoot.AudioManager.PlaySfx(waterSound);
             }
 
             if (_other.CompareTag("Ice"))
@@ -55,6 +67,13 @@ namespace Player
             }
 
 
+            if (_other.CompareTag("Star"))
+            {
+                _other.gameObject.SetActive(false);
+                ManagerRoot.AudioManager.PlaySfx(starSound);
+                string CurrentSceneName = SceneManager.GetActiveScene().name;
+                ManagerRoot.GameManager.AddStar(CurrentSceneName);
+            }
         }
 
        

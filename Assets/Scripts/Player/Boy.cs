@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Player
 {
     public class Boy : PlayerController
     {
+        [Header("효과음")]
+        [SerializeField] private AudioClip starSound;
+        [SerializeField] private AudioClip waterSound;
 
         public override void HandleAction()
         {
@@ -38,11 +42,17 @@ namespace Player
         {
             if (_other.CompareTag("RedWater"))
             {
+                ManagerRoot.AudioManager.PlaySfx(waterSound);
                 ManagerRoot.GameManager.IsDie = true;
                 Dead();
                 yield return new WaitForSeconds(2f);
                 ManagerRoot.GameManager.GameOver();
                 Debug.Log("용암에 닿았습니다.");
+            }
+
+            if (_other.CompareTag("Water"))
+            {
+                ManagerRoot.AudioManager.PlaySfx(waterSound);
             }
 
             if(_other.CompareTag("Flag_blue"))
@@ -53,8 +63,10 @@ namespace Player
 
             if (_other.CompareTag("Star"))
             {
-               // SetActive(false);
-               // AddStar(1)
+                _other.gameObject.SetActive(false);
+                ManagerRoot.AudioManager.PlaySfx(starSound);
+                string CurrentSceneName = SceneManager.GetActiveScene().name;
+                ManagerRoot.GameManager.AddStar(CurrentSceneName);
             }
 
 
