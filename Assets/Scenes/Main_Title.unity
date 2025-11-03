@@ -257,7 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 633843fd935560142a8e211f73280eff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 1018162479}
   uiManager: {fileID: 428550931}
   sceneController: {fileID: 428550930}
   audioManager: {fileID: 428550929}
@@ -329,6 +329,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1018162479 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2359629990972392339, guid: 8d822631639c52745a3aa86e6cffaaea, type: 3}
+  m_PrefabInstance: {fileID: 428550927}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e07d4f8bc5369944a677528acfaf81a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1667030089
 GameObject:
   m_ObjectHideFlags: 0
