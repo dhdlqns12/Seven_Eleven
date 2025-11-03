@@ -52,12 +52,13 @@ public class GameManager : MonoBehaviour
 
     public void Dead()
     {
-        StartCoroutine(DeadOver());
+       // StartCoroutine(DeadOver());
+       IsDie = true;
     }
 
     IEnumerator DeadOver()
     {
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(2f);
         IsDie = true;
     }
     
