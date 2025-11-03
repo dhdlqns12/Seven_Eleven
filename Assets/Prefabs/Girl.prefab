@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b88941bc8530c4950ac1e6d560c51ba2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3
   jumpForce: 4.5
   movementDirection: {x: 0, y: 0}
   rb: {fileID: 8621893075873770660}

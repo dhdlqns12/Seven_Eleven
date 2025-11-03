@@ -13,7 +13,6 @@ public class GameManager : MonoBehaviour
     private bool isClear_2;  //소년이 깃발에 닿았을 때 isClear_1,2가 모두 true여야 스테이지 클리어
     public bool isEnter=false;
 
-
     public bool IsClear_1
     {
         get => isClear_1;
@@ -33,7 +32,8 @@ public class GameManager : MonoBehaviour
             CheckStageClear();
         }
     }
-
+    
+    
     public bool IsDie
     {
         get => isDie;
@@ -47,6 +47,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void Dead()
+    {
+        StartCoroutine(DeadOver());
+    }
+
+    IEnumerator DeadOver()
+    {
+        yield return new WaitForSeconds(2.5f);
+        IsDie = true;
+    }
+    
+    
+    
     private void OnDisable()
     {
         ResetStageFlags();

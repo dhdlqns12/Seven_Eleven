@@ -38,7 +38,8 @@ namespace Player
         {
             if (_other.CompareTag("RedWater"))
             {
-                ManagerRoot.GameManager.IsDie = true;
+                Dead();
+                ManagerRoot.GameManager.Dead();
                 Debug.Log(ManagerRoot.GameManager.IsDie);
             }
 
@@ -50,8 +51,8 @@ namespace Player
 
             if (_other.CompareTag("Star"))
             {
-                SetActive(false);
-                AddStar(1)
+               // SetActive(false);
+               // AddStar(1)
             }
 
 
