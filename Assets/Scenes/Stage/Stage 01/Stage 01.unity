@@ -2901,6 +2901,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boy
       objectReference: {fileID: 0}
+    - target: {fileID: 7115846915607100557, guid: ac409741ed79942c2aad24e7c1824527, type: 3}
+      propertyPath: m_TagString
+      value: Player_Water
+      objectReference: {fileID: 0}
+    - target: {fileID: 8582590296576082844, guid: ac409741ed79942c2aad24e7c1824527, type: 3}
+      propertyPath: jumpForce
+      value: 5.4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2957,6 +2965,14 @@ PrefabInstance:
     - target: {fileID: 1986765523986103294, guid: 72ec18c27180e443daa28fe46acfd9f8, type: 3}
       propertyPath: m_Name
       value: Girl
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986765523986103294, guid: 72ec18c27180e443daa28fe46acfd9f8, type: 3}
+      propertyPath: m_TagString
+      value: Player_Water
+      objectReference: {fileID: 0}
+    - target: {fileID: 6955576283811220706, guid: 72ec18c27180e443daa28fe46acfd9f8, type: 3}
+      propertyPath: jumpForce
+      value: 5.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
