@@ -56,6 +56,7 @@ MonoBehaviour:
   isGrounded: 0
   animationHandler: {fileID: 8371043011619080041}
   jumpClip: {fileID: 8300000, guid: 4269f247276946849a0d6492590fdff4, type: 3}
+  starSound: {fileID: 8300000, guid: f6f9b992c23ce074d924228a18921832, type: 3}
 --- !u!50 &8621893075873770660
 Rigidbody2D:
   serializedVersion: 4

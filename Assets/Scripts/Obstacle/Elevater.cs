@@ -36,7 +36,7 @@ public class Elevater : ElevaterManager
         
         float rate = time / elevaterMoveSpeed;
         rate = Mathf.Clamp01(rate);
-        transform.localPosition = Vector2.Lerp(transform.localPosition, pos, rate);
+        transform.localPosition = Vector2.Lerp(transform.localPosition, pos, rate*0.05f);
        // Debug.Log($"elevaterOriginPos: {elevaterOriginPos},elevaterArrivePos: {pos}, position: {transform.localPosition} ");
     }
 
