@@ -33,12 +33,14 @@ namespace Player
             movementDirection = new Vector2(horizontalInput, verticalInput).normalized; 
         }
 
-        private void OnTriggerEnter2D(Collider2D _other) //장애물들과 충돌처리 코드 완료. 테스트 필요
+        private IEnumerator OnTriggerEnter2D(Collider2D _other) //장애물들과 충돌처리 코드 완료. 테스트 필요
         {
             if (_other.CompareTag("Water"))
             {
-           
-                ManagerRoot.GameManager.IsDie = true;
+                ManagerRoot.GameManager.IsDie=true;
+                Dead();
+                yield return new WaitForSeconds(2f);
+                ManagerRoot.GameManager.GameOver();
                 Debug.Log("파도에 충돌했습니다.");
             }
 

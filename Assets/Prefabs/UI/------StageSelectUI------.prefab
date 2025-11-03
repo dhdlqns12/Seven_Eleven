@@ -1694,17 +1694,14 @@ MonoBehaviour:
   - {fileID: 4199345376341844511}
   - {fileID: 6484082164829894679}
   - {fileID: 3668519554275873249}
-  scores:
-  - {fileID: 21300000, guid: fdc57c81ca420234293f541c453c1673, type: 3}
-  - {fileID: 21300000, guid: a2442b6f2e3694f478ca5e4f09853108, type: 3}
-  - {fileID: 21300000, guid: 680a24960389f104291a56178b610f59, type: 3}
-  - {fileID: 21300000, guid: f6819f0b95cd72649885839c58c71c06, type: 3}
+  scores: []
   currentScores:
   - {fileID: 5126216033236568339}
   - {fileID: 7663912359734667109}
   - {fileID: 6478920029899542269}
   - {fileID: 7873762290742749784}
   - {fileID: 5382399691656741737}
+  clickbtn: {fileID: 8300000, guid: 30386e7ce7773b549a31c96456dadb16, type: 3}
 --- !u!1 &6089604060837709649
 GameObject:
   m_ObjectHideFlags: 0

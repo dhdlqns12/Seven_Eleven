@@ -14,7 +14,11 @@ public class GameManager : MonoBehaviour
     private bool isClear_1;  //소녀가 깃발에 닿았을 때
     private bool isClear_2;  //소년이 깃발에 닿았을 때 isClear_1,2가 모두 true여야 스테이지 클리어
     public bool isEnter=false;
-   
+    
+    [Header("효과음")]
+    [SerializeField] private AudioClip dieSound;
+    [SerializeField] private AudioClip clearSound;
+
     public bool IsClear_1
     {
         get => isClear_1;
@@ -34,7 +38,8 @@ public class GameManager : MonoBehaviour
             CheckStageClear();
         }
     }
-
+    
+    
     public bool IsDie
     {
         get => isDie;
@@ -43,15 +48,22 @@ public class GameManager : MonoBehaviour
             if (value && !isDie)
             {
                 isDie = value;
-                GameOver();
+                //GameOver();
             }
         }
     }
 
+    public void Dead()
+    {
+       IsDie = true;
+    }
+    
+     
     private void OnDisable()
     {
         ResetStageFlags();
     }
+    
 
     private void ResetStageFlags()
     {
@@ -151,6 +163,7 @@ public class GameManager : MonoBehaviour
 
     private void StageClear()
     {
+        ManagerRoot.AudioManager.PlaySfx(clearSound);
         ManagerRoot.UIManager.ShowPanel<StageClearUI>();
         Time.timeScale = 0f;
 
@@ -190,6 +203,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        ManagerRoot.AudioManager.PlaySfx(dieSound);
         ManagerRoot.UIManager.ShowPanel<StageFailUI>();
         Time.timeScale = 0f;
 

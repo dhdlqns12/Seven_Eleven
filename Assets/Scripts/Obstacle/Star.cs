@@ -10,6 +10,9 @@ public class Star : MonoBehaviour
 
     static int StarGetcount;//추후 수정
 
+    [Header("효과음")]
+    [SerializeField] private AudioClip starSound;
+
 
    
 

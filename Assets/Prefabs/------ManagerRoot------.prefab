@@ -283,6 +283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 799496012676805512}
   - component: {fileID: 4831640597993001743}
+  - component: {fileID: 880988784677178172}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -325,10 +326,22 @@ MonoBehaviour:
   bgmClips:
   - {fileID: 0}
   - {fileID: 8300000, guid: 7c9048d388147f94382b55c564e4148d, type: 3}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 7c9048d388147f94382b55c564e4148d, type: 3}
   - {fileID: 8300000, guid: eb2beda33b8e57841b69111be94ccd3d, type: 3}
+  - {fileID: 8300000, guid: f7ad7f6fce8f1cf41889c04a17e358b7, type: 3}
+  - {fileID: 8300000, guid: f7ad7f6fce8f1cf41889c04a17e358b7, type: 3}
+  - {fileID: 8300000, guid: 17f73fc973346a64ca7b62e925670cd4, type: 3}
+  - {fileID: 8300000, guid: 17f73fc973346a64ca7b62e925670cd4, type: 3}
   sfxClips:
   - {fileID: 0}
+--- !u!81 &880988784677178172
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5797590736518556973}
+  m_Enabled: 1
 --- !u!1 &6068603493809643314
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,6 +388,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCollisionObstacle: 0
   isEnter: 0
+  dieSound: {fileID: 8300000, guid: 3729a410fd4e724409b711e96cb46e43, type: 3}
+  clearSound: {fileID: 0}
 --- !u!1 &6114297142930618050
 GameObject:
   m_ObjectHideFlags: 0

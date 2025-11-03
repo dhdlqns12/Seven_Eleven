@@ -48,14 +48,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b88941bc8530c4950ac1e6d560c51ba2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3
   jumpForce: 4.5
   movementDirection: {x: 0, y: 0}
   rb: {fileID: 8621893075873770660}
   spriteRenderer: {fileID: 8416891902126948120}
   isGrounded: 0
   animationHandler: {fileID: 8371043011619080041}
-  jumpClip: {fileID: 8300000, guid: bd2aeb39af726f943b7c56bb63b76167, type: 3}
+  jumpClip: {fileID: 8300000, guid: 4269f247276946849a0d6492590fdff4, type: 3}
 --- !u!50 &8621893075873770660
 Rigidbody2D:
   serializedVersion: 4
@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 8416891902126948120}
   m_Layer: 7
   m_Name: 'Sprite '
-  m_TagString: Untagged
+  m_TagString: Fire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -224,7 +224,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: 8d0595b3dd0c347cc8c1ed5e495c1d1d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

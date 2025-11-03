@@ -10,6 +10,9 @@ public class StageFailUI : UIBase
     [SerializeField] private Button restart_Btn;
     [SerializeField] private Button goToStageSelect_Btn;
 
+    [Header("효과음")]
+    [SerializeField] private AudioClip clickbtn;
+
     protected override void SetupUI()
     {
     }
@@ -45,12 +48,14 @@ public class StageFailUI : UIBase
     {
         Close();
         ManagerRoot.SceneController.RestartScene();
+        ManagerRoot.AudioManager.PlaySfx(clickbtn);
     }
 
     private void GoToStageSelectButton()
     {
         Close();
         ManagerRoot.SceneController.LoadStageSelectScene();
+        ManagerRoot.AudioManager.PlaySfx(clickbtn);
     }
     #endregion
 }

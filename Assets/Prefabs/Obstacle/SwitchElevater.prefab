@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7735686754845755534}
   - component: {fileID: 2562306620083925826}
   - component: {fileID: 2967755559516072614}
-  - component: {fileID: 8886375801872409214}
   m_Layer: 3
   m_Name: Elevater
   m_TagString: Untagged
@@ -148,33 +147,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6357275, y: 0.16419004}
   m_EdgeRadius: 0
---- !u!50 &8886375801872409214
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2001180020182071451}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &4441753803065001582
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,7 +240,6 @@ GameObject:
   m_Component:
   - component: {fileID: 168140345703788646}
   - component: {fileID: 8801455014821566335}
-  - component: {fileID: 1850637246881701206}
   - component: {fileID: 1040185008692144796}
   - component: {fileID: 8669183270323787058}
   m_Layer: 0
@@ -346,33 +317,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &1850637246881701206
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7417087539780321264}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!61 &1040185008692144796
 BoxCollider2D:
   m_ObjectHideFlags: 0
