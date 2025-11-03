@@ -36,7 +36,7 @@ namespace Player
         {
             if (_other.CompareTag("Water"))
             {
-           
+                Dead();
                 ManagerRoot.GameManager.IsDie = true;
                 Debug.Log("파도에 충돌했습니다.");
             }

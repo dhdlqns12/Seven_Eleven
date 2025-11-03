@@ -42,11 +42,17 @@ namespace Player
             Move();
             Jump();
         }
+        
 
         private void Init()
         {
             lastJumpTime = 0f;
             jumpCooldown = 0.2f;
+        }
+
+        protected void Dead()
+        {
+            animationHandler.Dead();
         }
 
         private void Move()
