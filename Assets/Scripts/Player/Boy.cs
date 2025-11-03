@@ -34,13 +34,15 @@ namespace Player
 
         }
 
-        private void OnTriggerEnter2D(Collider2D _other) //장애물들과 충돌처리 코드 완료. 테스트 필요
+        private IEnumerator OnTriggerEnter2D(Collider2D _other) //장애물들과 충돌처리 코드 완료. 테스트 필요
         {
             if (_other.CompareTag("RedWater"))
             {
+                ManagerRoot.GameManager.IsDie = true;
                 Dead();
-                ManagerRoot.GameManager.Dead();
-                Debug.Log(ManagerRoot.GameManager.IsDie);
+                yield return new WaitForSeconds(2f);
+                ManagerRoot.GameManager.GameOver();
+                Debug.Log("용암에 닿았습니다.");
             }
 
             if(_other.CompareTag("Flag_blue"))

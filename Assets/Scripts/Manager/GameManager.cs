@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     private bool isClear_1;  //소녀가 깃발에 닿았을 때
     private bool isClear_2;  //소년이 깃발에 닿았을 때 isClear_1,2가 모두 true여야 스테이지 클리어
     public bool isEnter=false;
-
+    
     [Header("효과음")]
     [SerializeField] private AudioClip dieSound;
 
@@ -45,28 +45,22 @@ public class GameManager : MonoBehaviour
             if (value && !isDie)
             {
                 isDie = value;
-                GameOver();
+                //GameOver();
             }
         }
     }
 
     public void Dead()
     {
-        StartCoroutine(DeadOver());
-    }
-
-    IEnumerator DeadOver()
-    {
-        yield return new WaitForSeconds(2.5f);
-        IsDie = true;
+       IsDie = true;
     }
     
-    
-    
+     
     private void OnDisable()
     {
         ResetStageFlags();
     }
+    
 
     private void ResetStageFlags()
     {
@@ -76,8 +70,6 @@ public class GameManager : MonoBehaviour
     }
 
     /// ///////////////////////star 작성중///
-
-   
 
     public Dictionary<string, int> stageStars = new Dictionary<string, int>();
    
