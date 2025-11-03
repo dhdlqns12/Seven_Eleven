@@ -4,8 +4,18 @@ using UnityEngine;
 
 public class ElevaterManager : MonoBehaviour
 {
-    protected bool isEnter = false;
+    protected int isEnterCount=0;
 
     [SerializeField] protected GameObject elevater;
     [SerializeField] protected GameObject button;
+
+    protected void EnterColliderCheack()
+    {
+        isEnterCount += 1;
+    }
+    protected void ExitColliderCheack()
+    {
+        isEnterCount -= 1;
+    }
+
 }

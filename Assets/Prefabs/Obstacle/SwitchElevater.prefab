@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   elevater: {fileID: 2001180020182071451}
   button: {fileID: 7417087539780321264}
-  elevaterMoveSpeed: 4
+  elevaterMoveSpeed: 1
   targetPosition: {x: 2.29, y: 0.12}
 --- !u!212 &2562306620083925826
 SpriteRenderer:

@@ -1,32 +1,53 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Elevater : ElevaterManager
 {
-    [SerializeField] private float elevaterMoveSpeed = 4f;//엘레베이터 움직이는 속도
+    [SerializeField] private float elevaterMoveSpeed = 1f;//엘레베이터 움직이는 속도
     [SerializeField] private Vector2 targetPosition;//엘베 목표지점
     Vector2 elevaterOriginPos;//엘레베이터 배치 좌표값
-   
-    Rigidbody2D rb;
+    float time = 0f;
+
+    bool isCollider;
 
 
     void Start()
     {
-        rb = elevater.GetComponent<Rigidbody2D>();
-        elevaterOriginPos = rb.position;//현재 엘베의 좌표 기록
-        targetPosition = new Vector2(targetPosition.x, targetPosition.y);//목표지점 좌표
+        elevaterOriginPos = transform.localPosition;//현재 엘베의 좌표 기록
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        Vector2 elevaterArrivePos = isEnter ? targetPosition : elevaterOriginPos;
-        rb.MovePosition(Vector2.Lerp(rb.position, elevaterArrivePos, Time.fixedDeltaTime * elevaterMoveSpeed));//현재 위치와 타겟위치 사이를 자연스럽게 속도 맞춰서 위치 바꾸기
+        Vector2 pos;
+
+        if (isCollider)//도착지점 바꿈
+        {
+            pos = targetPosition;
+        }
+        else
+        {
+            pos = elevaterOriginPos;
+        }
+
+        //rb.MovePosition(Vector2.Lerp(rb.position, elevaterArrivePos, Time.fixedDeltaTime * elevaterMoveSpeed));//현재 위치와 타겟위치 사이를 자연스럽게 속도 맞춰서 위치 바꾸기
+        time += Time.deltaTime;
+       
+        
+        float rate = time / elevaterMoveSpeed;
+        rate = Mathf.Clamp01(rate);
+        transform.localPosition = Vector2.Lerp(transform.localPosition, pos, rate);
+       // Debug.Log($"elevaterOriginPos: {elevaterOriginPos},elevaterArrivePos: {pos}, position: {transform.localPosition} ");
     }
 
     public void SetActive(bool state)
     {
-        isEnter = state;
+        isCollider = state;
     }
 
+    public void ResetTime()
+    {
+        time = 0f;
+    }
 }
