@@ -3360,11 +3360,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2561617335713869656, guid: ac409741ed79942c2aad24e7c1824527, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.82
+      value: -10.79
       objectReference: {fileID: 0}
     - target: {fileID: 2561617335713869656, guid: ac409741ed79942c2aad24e7c1824527, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.61
+      value: -6.83
       objectReference: {fileID: 0}
     - target: {fileID: 2561617335713869656, guid: ac409741ed79942c2aad24e7c1824527, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4039,6 +4039,7 @@ MonoBehaviour:
   isEnter: 0
   dieSound: {fileID: 0}
   clearSound: {fileID: 0}
+  currentStageStars: 0
 --- !u!4 &1889539714
 Transform:
   m_ObjectHideFlags: 0
@@ -4462,7 +4463,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 38959783244997051, guid: 72ec18c27180e443daa28fe46acfd9f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.86
+      value: 10.68
       objectReference: {fileID: 0}
     - target: {fileID: 38959783244997051, guid: 72ec18c27180e443daa28fe46acfd9f8, type: 3}
       propertyPath: m_LocalPosition.y
