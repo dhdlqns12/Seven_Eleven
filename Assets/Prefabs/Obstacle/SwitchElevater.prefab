@@ -377,6 +377,7 @@ MonoBehaviour:
   elevater: {fileID: 2001180020182071451}
   button: {fileID: 7417087539780321264}
   elevaterScript: {fileID: 7735686754845755534}
+  switchSound: {fileID: 8300000, guid: 211835bae79876a4f932b612e3106242, type: 3}
 --- !u!1 &8972931177559931977
 GameObject:
   m_ObjectHideFlags: 0
