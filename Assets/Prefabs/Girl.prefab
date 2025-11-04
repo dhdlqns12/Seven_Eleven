@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  jumpForce: 4.5
+  jumpForce: 5.4
   movementDirection: {x: 0, y: 0}
   rb: {fileID: 8621893075873770660}
   spriteRenderer: {fileID: 8416891902126948120}

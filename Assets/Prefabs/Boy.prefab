@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  jumpForce: 4.5
+  jumpForce: 5.4
   movementDirection: {x: 0, y: 0}
   rb: {fileID: 4494665425482118431}
   spriteRenderer: {fileID: 3270452080198110305}
@@ -164,7 +164,6 @@ MonoBehaviour:
   jumpClip: {fileID: 8300000, guid: 4269f247276946849a0d6492590fdff4, type: 3}
   starSound: {fileID: 8300000, guid: f6f9b992c23ce074d924228a18921832, type: 3}
   waterSound: {fileID: 8300000, guid: abc85ca845b81974a8874f223c270777, type: 3}
-  blueFlagAnimator: {fileID: 0}
 --- !u!50 &4494665425482118431
 Rigidbody2D:
   serializedVersion: 4

@@ -3130,7 +3130,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1986765523986103294, guid: 72ec18c27180e443daa28fe46acfd9f8, type: 3}
       propertyPath: m_TagString
-      value: Player_Water
+      value: Player_Fire
       objectReference: {fileID: 0}
     - target: {fileID: 6955576283811220706, guid: 72ec18c27180e443daa28fe46acfd9f8, type: 3}
       propertyPath: jumpForce
