@@ -7,6 +7,9 @@ public class Switch : ElevaterManager
     
     [SerializeField] private Elevater elevaterScript;
 
+    [Header("효과음")]
+    [SerializeField] private AudioClip switchSound;
+
     float ButtonMoveSpeed = 1f;
     Vector2 ButtonOriginPos;
     Vector2 ButtonPressPos;
@@ -56,7 +59,7 @@ public class Switch : ElevaterManager
             EnterColliderCheack();
             //elevaterScript.SetActive(isEnterCount>0);
 
-
+            ManagerRoot.AudioManager.PlaySfx(switchSound);
             Debug.Log("버튼을 밟고 있습니다.");
         }
     }

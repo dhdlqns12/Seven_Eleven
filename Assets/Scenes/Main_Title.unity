@@ -130,6 +130,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3233324343147776249, guid: 8d822631639c52745a3aa86e6cffaaea, type: 3}
+      propertyPath: uiPrefabLists.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3233324343147776249, guid: 8d822631639c52745a3aa86e6cffaaea, type: 3}
+      propertyPath: uiPrefabLists.Array.data[3]
+      value: 
+      objectReference: {fileID: 1903574991577898264, guid: 84864a00001278c4b9d68cacbb88543e, type: 3}
+    - target: {fileID: 3233324343147776249, guid: 8d822631639c52745a3aa86e6cffaaea, type: 3}
+      propertyPath: uiPrefabLists.Array.data[4]
+      value: 
+      objectReference: {fileID: 6843125984174482543, guid: ed27348fd8ea6144c930c352a3e44f8a, type: 3}
+    - target: {fileID: 3233324343147776249, guid: 8d822631639c52745a3aa86e6cffaaea, type: 3}
+      propertyPath: uiPrefabLists.Array.data[5]
+      value: 
+      objectReference: {fileID: 6347440301026185430, guid: 4b26b3a9b5e821f49892b7456ddc142f, type: 3}
+    - target: {fileID: 3233324343147776249, guid: 8d822631639c52745a3aa86e6cffaaea, type: 3}
+      propertyPath: uiPrefabLists.Array.data[6]
+      value: 
+      objectReference: {fileID: 3787781608825710582, guid: 7416b4354f5af6241be3653a779cfad3, type: 3}
     - target: {fileID: 5256705500752138139, guid: 8d822631639c52745a3aa86e6cffaaea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

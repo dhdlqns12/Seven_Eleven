@@ -19,8 +19,6 @@ public class AudioManager : MonoBehaviour
     [Header("SFX Clips")]
     [SerializeField] private AudioClip[] sfxClips;
 
-    private bool isMuted = false;
-
     private float currentMasterVolume;
     private float currentBGMVolume;
     private float currentSFXVolume;
