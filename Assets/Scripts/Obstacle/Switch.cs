@@ -54,12 +54,14 @@ public class Switch : ElevaterManager
                 time = 0f;
                 elevaterScript.ResetTime();
                 elevaterScript.SetActive(true);
+                ManagerRoot.AudioManager.PlaySfx(switchSound);
+
             }
            
             EnterColliderCheack();
             //elevaterScript.SetActive(isEnterCount>0);
 
-            ManagerRoot.AudioManager.PlaySfx(switchSound);
+            
             Debug.Log("버튼을 밟고 있습니다.");
         }
     }
