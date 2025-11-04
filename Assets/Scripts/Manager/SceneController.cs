@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
@@ -34,6 +35,31 @@ public class SceneController : MonoBehaviour
         if(_scene.name== "Intro")
         {
             ManagerRoot.UIManager.ShowPanel<IntroUI>();
+        }
+
+        if (_scene.name == "Stage 01")
+        {
+            ManagerRoot.UIManager.ShowPanel<StageOptionUI>();
+        }
+
+        if (_scene.name == "Stage 02")
+        {
+            ManagerRoot.UIManager.ShowPanel<StageOptionUI>();
+        }
+
+        if (_scene.name == "Stage 03")
+        {
+            ManagerRoot.UIManager.ShowPanel<StageOptionUI>();
+        }
+
+        if (_scene.name== "Stage 04")
+        {
+            ManagerRoot.UIManager.ShowPanel<StageOptionUI>();
+        }
+
+        if(_scene.name== "Stage 05")
+        {
+            ManagerRoot.UIManager.ShowPanel<StageOptionUI>();
         }
     }
 

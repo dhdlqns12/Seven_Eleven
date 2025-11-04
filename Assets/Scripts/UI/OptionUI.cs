@@ -73,6 +73,7 @@ public class OptionUI : UIBase
     {
         ManagerRoot.AudioManager.PlaySfx(clickbtn);
         ManagerRoot.UIManager.ClosePanel<OptionUI>();
+        Time.timeScale = 1;
     }
     #endregion
 
