@@ -66,7 +66,7 @@ namespace Player
                 _other.gameObject.SetActive(false);
                 ManagerRoot.AudioManager.PlaySfx(starSound);
                 string CurrentSceneName = SceneManager.GetActiveScene().name;
-                ManagerRoot.GameManager.AddStar(CurrentSceneName);
+                ManagerRoot.GameManager.AddStar();
             }
 
 

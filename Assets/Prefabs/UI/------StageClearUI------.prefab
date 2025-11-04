@@ -130,12 +130,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiType: 0
-  stars: []
+  stars:
+  - {fileID: 5804060190576260679}
+  - {fileID: 9048290209034253297}
+  - {fileID: 9176575639993143216}
   restart_Btn: {fileID: 109689211695634847}
   goToStageSelect_Btn: {fileID: 5957605882409511802}
   nextStage_Btn: {fileID: 6936677074623169058}
-  activeStar: {fileID: 0}
-  inActiveStar: {fileID: 0}
+  activeStar: {fileID: 21300000, guid: e51abdcedaecd894d92b163fb4c6b664, type: 3}
+  inActiveStar: {fileID: 21300000, guid: de6fdb95c20bc11469d6e306c79adf01, type: 3}
   clickbtn: {fileID: 8300000, guid: 30386e7ce7773b549a31c96456dadb16, type: 3}
 --- !u!1 &2875159108631238825
 GameObject:

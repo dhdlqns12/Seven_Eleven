@@ -56,8 +56,12 @@ public class GameManager : MonoBehaviour
     {
        IsDie = true;
     }
-    
-     
+
+    private void Start()
+    {
+        currentStageStars = 0;
+    }
+
     private void OnDisable()
     {
         ResetStageFlags();
@@ -75,14 +79,13 @@ public class GameManager : MonoBehaviour
     public Dictionary<string, int> stageStars = new Dictionary<string, int>();
 
     string[] stageNames = { "Stage 01", "Stage 02", "Stage 03", "Stage 04", "Stage 05" };
-    string stageKey;
-
+    private int currentStageStars;
 
     private void SetScore()
     {
         for (int i = 0; i < stageNames.Length; i++)
         {
-            stageKey = stageNames[i];
+            string stageKey = stageNames[i];
             int savedValue = PlayerPrefs.GetInt(stageKey, 0);
 
             if (stageStars.ContainsKey(stageKey))
@@ -103,28 +106,39 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void AddStar(string _stageName, int _starCount = 1)//별과 충돌할 때마다 플레이어 스크립트에서 호출
+    public void AddStar()//별과 충돌할 때마다 플레이어 스크립트에서 호출
                                                               //RootManager.GameManager.AddStar()
     {
+        currentStageStars++;
+        Debug.Log($"현재 별 개수: {currentStageStars}");
+    }
 
-        if (stageStars.ContainsKey(_stageName))// 해당 스테이지가 존재하면
+    private void OnStageFailed()
+    {
+        currentStageStars = 0;
+        Debug.Log("스테이지 실패 - 별 점수 저장 안 함");
+    }
+
+    private void SaveStageStars(string stageName)
+    {
+        if (stageStars.ContainsKey(stageName))
         {
-            if (stageStars[_stageName] > 3)
+            int savedStars = stageStars[stageName];
+
+            if (currentStageStars > savedStars)
             {
-                stageStars[_stageName] = 3;//점수가 3을 넘지않도록 제한
+                stageStars[stageName] = currentStageStars;
+                PlayerPrefs.SetInt(stageName, currentStageStars);
+                PlayerPrefs.Save();
+                Debug.Log($"{stageName} 별 점수 업데이트: {currentStageStars}개");
             }
             else
             {
-                stageStars[_stageName] += _starCount;
-
+                Debug.Log($"{stageName} 별 점수 유지: {savedStars}개 (현재: {currentStageStars}개)");
             }
-
-
-            PlayerPrefs.SetInt(_stageName, stageStars[_stageName]);
-            PlayerPrefs.Save(); // 저장 확정
         }
-
     }
+
 
     #region 해상도 설정
     private void LoadResolution()
@@ -166,19 +180,31 @@ public class GameManager : MonoBehaviour
         ManagerRoot.UIManager.ShowPanel<StageClearUI>();
         Time.timeScale = 0f;
 
-        // 현재 스테이지 클리어 저장
         string currentSceneName = SceneManager.GetActiveScene().name;
         int stageNumber = GetStageNumber(currentSceneName);
 
+        SaveStageStars(currentSceneName);
+
         if (stageNumber > 0)
         {
-            PlayerPrefs.SetInt($"Stage_{stageNumber}_Cleared", 1);
+            string key = $"Stage_{stageNumber}_Cleared";
+            PlayerPrefs.SetInt(key, 1);
             PlayerPrefs.Save();
-            Debug.Log($"Stage {stageNumber} 클리어 저장 완료");
+            Debug.Log($"저장 완료: {key} = 1");
         }
-        
+
         StageSelectUI stageSelectUI = ManagerRoot.UIManager.GetPanel<StageSelectUI>();
-        stageSelectUI.GetScore();
+        if (stageSelectUI != null)
+        {
+            stageSelectUI.GetScore();
+        }
+
+        // StageClearUI 별 표시 업데이트
+        StageClearUI stageClearUI = ManagerRoot.UIManager.GetPanel<StageClearUI>();
+        if (stageClearUI != null)
+        {
+            stageClearUI.UpdateStars(currentStageStars);
+        }
 
         isClear_1 = false;
         isClear_2 = false;
@@ -203,6 +229,9 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         ManagerRoot.AudioManager.PlaySfx(dieSound);
+
+        OnStageFailed();
+
         ManagerRoot.UIManager.ShowPanel<StageFailUI>();
         Time.timeScale = 0f;
 

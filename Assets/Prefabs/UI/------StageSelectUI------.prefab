@@ -1694,7 +1694,11 @@ MonoBehaviour:
   - {fileID: 4199345376341844511}
   - {fileID: 6484082164829894679}
   - {fileID: 3668519554275873249}
-  scores: []
+  scores:
+  - {fileID: 21300000, guid: fdc57c81ca420234293f541c453c1673, type: 3}
+  - {fileID: 21300000, guid: a2442b6f2e3694f478ca5e4f09853108, type: 3}
+  - {fileID: 21300000, guid: 680a24960389f104291a56178b610f59, type: 3}
+  - {fileID: 21300000, guid: f6819f0b95cd72649885839c58c71c06, type: 3}
   currentScores:
   - {fileID: 5126216033236568339}
   - {fileID: 7663912359734667109}

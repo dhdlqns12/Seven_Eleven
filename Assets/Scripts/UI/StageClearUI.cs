@@ -92,4 +92,21 @@ public class StageClearUI : UIBase
         ManagerRoot.AudioManager.PlaySfx(clickbtn);
     }
     #endregion
+
+    #region 점수 업데이트
+    public void UpdateStars(int starCount)
+    {
+        for (int i = 0; i < stars.Length; i++)
+        {
+            if (i < starCount)
+            {
+                stars[i].sprite = activeStar;
+            }
+            else
+            {
+                stars[i].sprite = inActiveStar;
+            }
+        }
+    }
+    #endregion
 }
