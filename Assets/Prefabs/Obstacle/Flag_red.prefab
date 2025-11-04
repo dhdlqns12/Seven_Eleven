@@ -12,13 +12,14 @@ GameObject:
   - component: {fileID: 1417172000919888589}
   - component: {fileID: 5371934965380847837}
   - component: {fileID: -5616495243709232410}
+  - component: {fileID: 6968002139789087023}
   m_Layer: 0
   m_Name: Flag_red
   m_TagString: Flag_red
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &922212508678437748
 Transform:
   m_ObjectHideFlags: 0
@@ -142,3 +143,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6968002139789087023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2138853464851750483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf262e3bdc90235418629c5d68b2e1f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redFlagAnimation: {fileID: -5616495243709232410}

@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 7281400617731097294}
   m_Layer: 8
   m_Name: Boy
-  m_TagString: Water
+  m_TagString: Player_Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -164,6 +164,7 @@ MonoBehaviour:
   jumpClip: {fileID: 8300000, guid: 4269f247276946849a0d6492590fdff4, type: 3}
   starSound: {fileID: 8300000, guid: f6f9b992c23ce074d924228a18921832, type: 3}
   waterSound: {fileID: 8300000, guid: abc85ca845b81974a8874f223c270777, type: 3}
+  blueFlagAnimator: {fileID: 0}
 --- !u!50 &4494665425482118431
 Rigidbody2D:
   serializedVersion: 4
