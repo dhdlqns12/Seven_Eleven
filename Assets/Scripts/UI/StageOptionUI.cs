@@ -50,6 +50,10 @@ public class StageOptionUI : UIBase
 
     private void HomeButton()
     {
+        if (ManagerRoot.UIManager.IsShowing<OptionUI>())
+        {
+            ManagerRoot.UIManager.ClosePanel<OptionUI>();
+        }
         ManagerRoot.SceneController.LoadStageSelectScene();
         ManagerRoot.AudioManager.PlaySfx(clickbtn);
     }
