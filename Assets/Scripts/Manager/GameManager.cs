@@ -47,7 +47,10 @@ public class GameManager : MonoBehaviour
             if (value && !isDie)
             {
                 isDie = value;
-                //GameOver();
+            }
+            else if (!value)
+            {
+                isDie = value;
             }
         }
     }
@@ -67,7 +70,6 @@ public class GameManager : MonoBehaviour
         ResetStageFlags();
     }
     
-
     private void ResetStageFlags()
     {
         isClear_1 = false;
@@ -78,8 +80,8 @@ public class GameManager : MonoBehaviour
 
     public Dictionary<string, int> stageStars = new Dictionary<string, int>();
 
-    string[] stageNames = { "Stage 01", "Stage 02", "Stage 03", "Stage 04", "Stage 05" };
-    private int currentStageStars;
+    private string[] stageNames = { "Stage 01", "Stage 02", "Stage 03", "Stage 04", "Stage 05" };
+    public int currentStageStars;
 
     private void SetScore()
     {

@@ -26,40 +26,19 @@ public class SceneController : MonoBehaviour
         {
             ManagerRoot.UIManager.ShowPanel<StageSelectUI>();
         }
-
-        if(_scene.name== "Main_Title")
+        else if(_scene.name== "Main_Title")
         {
             ManagerRoot.UIManager.ShowPanel<MainTitleUI>();
         }
-
-        if(_scene.name== "Intro")
+        else if(_scene.name== "Intro")
         {
             ManagerRoot.UIManager.ShowPanel<IntroUI>();
         }
-
-        if (_scene.name == "Stage 01")
+        else if (_scene.name.StartsWith("Stage "))
         {
             ManagerRoot.UIManager.ShowPanel<StageOptionUI>();
-        }
-
-        if (_scene.name == "Stage 02")
-        {
-            ManagerRoot.UIManager.ShowPanel<StageOptionUI>();
-        }
-
-        if (_scene.name == "Stage 03")
-        {
-            ManagerRoot.UIManager.ShowPanel<StageOptionUI>();
-        }
-
-        if (_scene.name== "Stage 04")
-        {
-            ManagerRoot.UIManager.ShowPanel<StageOptionUI>();
-        }
-
-        if(_scene.name== "Stage 05")
-        {
-            ManagerRoot.UIManager.ShowPanel<StageOptionUI>();
+            ManagerRoot.GameManager.currentStageStars = 0;
+            ManagerRoot.GameManager.IsDie = false;
         }
     }
 

@@ -390,6 +390,7 @@ MonoBehaviour:
   isEnter: 0
   dieSound: {fileID: 8300000, guid: 3729a410fd4e724409b711e96cb46e43, type: 3}
   clearSound: {fileID: 0}
+  currentStageStars: 0
 --- !u!1 &6114297142930618050
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,11 +596,12 @@ MonoBehaviour:
   - {fileID: 6213563852773530868, guid: 0b924fd9a4c05b54282d2d17b2eec65a, type: 3}
   - {fileID: 117159882083836692, guid: 82da039391bcb9549a3d89deb9a9f933, type: 3}
   - {fileID: 6279071726377832008, guid: 59aa2aa991f860645b7a9dfd4e94a481, type: 3}
-  - {fileID: 3134655458507993630, guid: 0a822f10f573d9446845e2725fb69646, type: 3}
+  - {fileID: 6213563852773530868, guid: 0b924fd9a4c05b54282d2d17b2eec65a, type: 3}
   - {fileID: 1903574991577898264, guid: 84864a00001278c4b9d68cacbb88543e, type: 3}
   - {fileID: 6843125984174482543, guid: ed27348fd8ea6144c930c352a3e44f8a, type: 3}
   - {fileID: 6347440301026185430, guid: 4b26b3a9b5e821f49892b7456ddc142f, type: 3}
   - {fileID: 3787781608825710582, guid: 7416b4354f5af6241be3653a779cfad3, type: 3}
+  - {fileID: 6553344609832131207, guid: 4de8b9898ed37e44da91689206ab530d, type: 3}
 --- !u!1 &8379883462664383186
 GameObject:
   m_ObjectHideFlags: 0

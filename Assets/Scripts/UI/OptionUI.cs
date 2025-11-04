@@ -44,6 +44,11 @@ public class OptionUI : UIBase
         }
     }
 
+    protected override void OnClose()
+    {
+        Time.timeScale = 1f;
+    }
+
     #region 이벤트 구독/해제
     protected override void SubscribeEvents()
     {
