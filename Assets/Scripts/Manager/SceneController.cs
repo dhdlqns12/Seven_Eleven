@@ -42,6 +42,7 @@ public class SceneController : MonoBehaviour
         }
     }
 
+    #region 로딩 방식
     public void LoadScene(string _sceneName) // 씬 전환 전 공통 작업 처리
     {
         SceneManager.LoadScene(_sceneName);
@@ -75,7 +76,9 @@ public class SceneController : MonoBehaviour
         }
         ManagerRoot.UIManager.ClosePanel<LoadingUI>();
     }
+    #endregion
 
+    #region 씬 이동
     public void LoadStageSelectScene()
     {
         LoadScene("StageSelect");
@@ -98,4 +101,5 @@ public class SceneController : MonoBehaviour
     {
         LoadScene("Main_Title");
     }
+    #endregion
 }

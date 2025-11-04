@@ -49,6 +49,7 @@ public class UIManager : MonoBehaviour  // UI매니저는 UI패널을 관리하�
         }
     }
 
+    #region 패널 관리
     private void InitPanels()
     {
         foreach (var panel in uiPanels.Values)
@@ -111,4 +112,5 @@ public class UIManager : MonoBehaviour  // UI매니저는 UI패널을 관리하�
         UIBase panel = GetPanel<T>();
         return panel != null && panel.gameObject.activeSelf;
     }
+    #endregion
 }

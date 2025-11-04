@@ -33,41 +33,6 @@ public class StageSelectUI : UIBase
         Show();
     }
 
-    //string[] stageNames = { "Stage 01", "Stage 02", "Stage 03", "Stage 04", "Stage 05" };
-
-    //public void GetScore()
-    //{
-    //    for (int i = 0; i < stageNames.Length; i++)//현재 맵의 스테이지 점수상황을 싹 돌면서
-    //    {
-    //        //내가 들어간 씬의 점수를 가져와서 
-
-    //        if (ManagerRoot.GameManager.stageStars[stageNames[i]] == 0)
-    //        {
-    //            currentScores[i].sprite = scores[0];
-    //        }
-    //        else if (ManagerRoot.GameManager.stageStars[stageNames[i]] == 1)
-    //        {
-    //            currentScores[i].sprite = scores[1];
-    //        }
-    //        else if (ManagerRoot.GameManager.stageStars[stageNames[i]] == 2)
-    //        {
-    //            currentScores[i].sprite = scores[2];
-    //        }
-    //        else if (ManagerRoot.GameManager.stageStars[stageNames[i]] == 3)
-    //        {
-    //            currentScores[i].sprite = scores[3];
-    //        }
-
-    //        //점수값
-
-    //        //내가 입력한 스테이지 값을 가져와, 그 스테이지의 점수값을 가져와
-    //        //스테이지 점수현황 를 돌면서 스테이지 이름을 확인하고 내가 들어간 씬의 이름이랑 똑같으면 그 스테이지의 점수를 가져와서 조건을 체크하고 거기에 맞는 스프라이트를 넣어
-                      
-    //    }
-
-
-    //}
-
     #region 스테이지 버튼 업데이트
     protected override void OnShow()
     {

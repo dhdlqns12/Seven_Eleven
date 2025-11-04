@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4797441249935988394}
   - component: {fileID: 6769009010575489472}
   - component: {fileID: 716095301521857459}
-  - component: {fileID: 2875693013791581579}
   m_Layer: 0
   m_Name: Star
   m_TagString: Star
@@ -121,16 +120,3 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &2875693013791581579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7495398357691740141}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a49a994b1dca5f4ba264df136ab9679, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  starSound: {fileID: 8300000, guid: f6f9b992c23ce074d924228a18921832, type: 3}
