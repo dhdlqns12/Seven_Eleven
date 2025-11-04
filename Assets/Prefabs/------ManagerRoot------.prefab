@@ -389,7 +389,7 @@ MonoBehaviour:
   isCollisionObstacle: 0
   isEnter: 0
   dieSound: {fileID: 8300000, guid: 3729a410fd4e724409b711e96cb46e43, type: 3}
-  clearSound: {fileID: 0}
+  clearSound: {fileID: 8300000, guid: c617d97a90733324787a63fd87729232, type: 3}
   currentStageStars: 0
 --- !u!1 &6114297142930618050
 GameObject:
