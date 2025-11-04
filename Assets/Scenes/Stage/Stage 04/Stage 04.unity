@@ -268,7 +268,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 168140345703788646, guid: 115d25c0f157ca24d9624b5de58e8347, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.2
+      value: -4.259
       objectReference: {fileID: 0}
     - target: {fileID: 1651788002492393101, guid: 115d25c0f157ca24d9624b5de58e8347, type: 3}
       propertyPath: m_LocalPosition.x
@@ -310,6 +310,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2562306620083925826, guid: 115d25c0f157ca24d9624b5de58e8347, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c45828302c949d54e9192982b7089662, type: 3}
     - target: {fileID: 4952690413797186491, guid: 115d25c0f157ca24d9624b5de58e8347, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.84
@@ -326,6 +330,10 @@ PrefabInstance:
       propertyPath: targetPosition.y
       value: -7.13
       objectReference: {fileID: 0}
+    - target: {fileID: 8801455014821566335, guid: 115d25c0f157ca24d9624b5de58e8347, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2640aabe2008926469906b171498271c, type: 3}
     - target: {fileID: 8972931177559931977, guid: 115d25c0f157ca24d9624b5de58e8347, type: 3}
       propertyPath: m_Name
       value: SwitchElevater
@@ -2326,7 +2334,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 168140345703788646, guid: 115d25c0f157ca24d9624b5de58e8347, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.73
+      value: -2.761
       objectReference: {fileID: 0}
     - target: {fileID: 1651788002492393101, guid: 115d25c0f157ca24d9624b5de58e8347, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2368,6 +2376,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2562306620083925826, guid: 115d25c0f157ca24d9624b5de58e8347, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5b94d71dcb09d3545a86263ef9113b54, type: 3}
     - target: {fileID: 4952690413797186491, guid: 115d25c0f157ca24d9624b5de58e8347, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.19
@@ -2384,6 +2396,10 @@ PrefabInstance:
       propertyPath: targetPosition.y
       value: -1.59
       objectReference: {fileID: 0}
+    - target: {fileID: 8801455014821566335, guid: 115d25c0f157ca24d9624b5de58e8347, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 550e35a2139f47944a561d0590d3c262, type: 3}
     - target: {fileID: 8972931177559931977, guid: 115d25c0f157ca24d9624b5de58e8347, type: 3}
       propertyPath: m_Name
       value: SwitchElevater 3
@@ -3062,7 +3078,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 168140345703788646, guid: 115d25c0f157ca24d9624b5de58e8347, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.83
+      value: 5.74
       objectReference: {fileID: 0}
     - target: {fileID: 1651788002492393101, guid: 115d25c0f157ca24d9624b5de58e8347, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3301,6 +3317,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2562306620083925826, guid: 115d25c0f157ca24d9624b5de58e8347, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 78124c4e28b9f7b479159ae324039391, type: 3}
     - target: {fileID: 4952690413797186491, guid: 115d25c0f157ca24d9624b5de58e8347, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.6
@@ -3317,6 +3337,10 @@ PrefabInstance:
       propertyPath: targetPosition.y
       value: -7.19
       objectReference: {fileID: 0}
+    - target: {fileID: 8801455014821566335, guid: 115d25c0f157ca24d9624b5de58e8347, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 36258d21108f00645bff6ad0ed03c605, type: 3}
     - target: {fileID: 8972931177559931977, guid: 115d25c0f157ca24d9624b5de58e8347, type: 3}
       propertyPath: m_Name
       value: SwitchElevater 2
@@ -4044,7 +4068,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 168140345703788646, guid: 115d25c0f157ca24d9624b5de58e8347, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.31
+      value: 3.245
       objectReference: {fileID: 0}
     - target: {fileID: 1651788002492393101, guid: 115d25c0f157ca24d9624b5de58e8347, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4086,6 +4110,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2562306620083925826, guid: 115d25c0f157ca24d9624b5de58e8347, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5b530de5effcd1648a3be6afe5ae50bc, type: 3}
     - target: {fileID: 4952690413797186491, guid: 115d25c0f157ca24d9624b5de58e8347, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.19
@@ -4102,6 +4130,10 @@ PrefabInstance:
       propertyPath: targetPosition.y
       value: 3.32
       objectReference: {fileID: 0}
+    - target: {fileID: 8801455014821566335, guid: 115d25c0f157ca24d9624b5de58e8347, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d2d5eb12bd20cc44c9fca356f66182c6, type: 3}
     - target: {fileID: 8972931177559931977, guid: 115d25c0f157ca24d9624b5de58e8347, type: 3}
       propertyPath: m_Name
       value: SwitchElevater 5
@@ -4312,6 +4344,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2562306620083925826, guid: 115d25c0f157ca24d9624b5de58e8347, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a8c536a52eaac674a82a0c31cca5c6bd, type: 3}
     - target: {fileID: 4952690413797186491, guid: 115d25c0f157ca24d9624b5de58e8347, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.53
@@ -4328,6 +4364,10 @@ PrefabInstance:
       propertyPath: targetPosition.y
       value: -2.53
       objectReference: {fileID: 0}
+    - target: {fileID: 8801455014821566335, guid: 115d25c0f157ca24d9624b5de58e8347, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6f8fc918a83b17144a3bf7977963ec91, type: 3}
     - target: {fileID: 8972931177559931977, guid: 115d25c0f157ca24d9624b5de58e8347, type: 3}
       propertyPath: m_Name
       value: SwitchElevater 4
