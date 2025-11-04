@@ -23,13 +23,22 @@ namespace Player
         
         
         [Header("효과음")]
-        //[SerializeField] private AudioSource playerAudioSource;
         [SerializeField] private AudioClip jumpClip;
+
+        private Camera mainCamera;
+        private float minX, maxX;
+        private float playerHalfWidth;
 
 
         private void Awake()
         {
             Init();
+        }
+
+        private void Start()
+        {
+            mainCamera = Camera.main;
+            InitCameraBounds();
         }
 
         private void Update()
@@ -44,6 +53,7 @@ namespace Player
         {
             if (ManagerRoot.GameManager.IsDie==false)
             {
+                ClampToCameraBounds();
                 Move();
                 Jump();
             }
@@ -54,7 +64,7 @@ namespace Player
         {
             lastJumpTime = 0f;
             jumpCooldown = 0.2f;
-        
+            playerHalfWidth = 0.5f;
         }
 
         protected void Dead()
@@ -83,10 +93,36 @@ namespace Player
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                 jumpRequsted = false;
                 lastJumpTime = 0f;
-                //ManagerRoot.AudioManager.PlaySfx(jumpClip); 음악이 아직 없어유 오류방지용주석
+                ManagerRoot.AudioManager.PlaySfx(jumpClip);
             }
         }
         public abstract void HandleAction();
+
+
+        #region 카메라 경계 기반 이동 제한
+        private void InitCameraBounds()
+        {
+            if (mainCamera == null)
+            {
+                Debug.LogWarning("메인 카메라를 없음!");
+                return;
+            }
+
+            float camHeight = mainCamera.orthographicSize;
+            float camWidth = camHeight * mainCamera.aspect;
+            Vector3 camPos = mainCamera.transform.position;
+
+            minX = camPos.x - camWidth;
+            maxX = camPos.x + camWidth;
+        }
+
+        private void ClampToCameraBounds()
+        {
+            Vector3 pos = transform.position;
+            pos.x = Mathf.Clamp(pos.x, minX + playerHalfWidth, maxX - playerHalfWidth);
+            transform.position = pos;
+        }
+        #endregion
     }
 
 
