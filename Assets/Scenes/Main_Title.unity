@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3233324343147776249, guid: 8d822631639c52745a3aa86e6cffaaea, type: 3}
       propertyPath: uiPrefabLists.Array.size
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3233324343147776249, guid: 8d822631639c52745a3aa86e6cffaaea, type: 3}
       propertyPath: uiPrefabLists.Array.data[3]
@@ -150,6 +150,10 @@ PrefabInstance:
       propertyPath: uiPrefabLists.Array.data[6]
       value: 
       objectReference: {fileID: 3787781608825710582, guid: 7416b4354f5af6241be3653a779cfad3, type: 3}
+    - target: {fileID: 3233324343147776249, guid: 8d822631639c52745a3aa86e6cffaaea, type: 3}
+      propertyPath: uiPrefabLists.Array.data[7]
+      value: 
+      objectReference: {fileID: 6553344609832131207, guid: 4de8b9898ed37e44da91689206ab530d, type: 3}
     - target: {fileID: 5256705500752138139, guid: 8d822631639c52745a3aa86e6cffaaea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
