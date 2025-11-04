@@ -74,12 +74,6 @@ public class OptionUI : UIBase
         ManagerRoot.AudioManager.PlaySfx(clickbtn);
         ManagerRoot.UIManager.ClosePanel<OptionUI>();
     }
-
-    private void KeySettingButton()
-    {
-        ManagerRoot.AudioManager.PlaySfx(clickbtn);
-        ManagerRoot.UIManager.ShowPanel<KeySettingUI>();
-    }
     #endregion
 
     #region 슬라이더 메서드
