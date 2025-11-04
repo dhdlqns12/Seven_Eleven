@@ -11,6 +11,7 @@ namespace Player
         [Header("효과음")]
         [SerializeField] private AudioClip starSound;
         [SerializeField] private AudioClip waterSound;
+        [SerializeField] private AudioClip iceSound;
 
 
         public override void HandleAction()
@@ -57,6 +58,7 @@ namespace Player
 
             if (_other.CompareTag("Ice"))
             {
+                ManagerRoot.AudioManager.PlaySfx(iceSound);
                 _other.gameObject.SetActive(false);
             }
 
