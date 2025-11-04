@@ -1,29 +1,56 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class FlowerGround : FlowerController
 {
-
-    [SerializeField] private float moveSpeed = 4f;         
-    [SerializeField] private float targetPosY;     
+    
+   
 
     private Vector2 originPos;                             
-    private Vector2 targetPos;                             
-    private Rigidbody2D rb;
+    
 
+    bool isBloom=false;
+    float time = 0f;
+
+    
     void Start()
     {
-        rb = flowerGround.GetComponent<Rigidbody2D>();
-        originPos = rb.position;
-        targetPos = new Vector2(originPos.x, originPos.y + targetPosY); 
+        originPos = transform.localPosition;
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        Vector2 moveTarget = FullFlower ? targetPos : originPos;
-        rb.MovePosition(Vector2.Lerp(rb.position, moveTarget, Time.fixedDeltaTime * moveSpeed));
+        Vector2 pos;
+
+        if (isBloom)//도착지점 바꿈
+        {
+            pos = targetPosition;
+        }
+        else
+        {
+            pos = originPos;
+        }
+
+        time += Time.deltaTime;
+
+
+        float rate = time / Speed;
+        rate = Mathf.Clamp01(rate);
+        transform.localPosition = Vector2.Lerp(transform.localPosition, pos, rate * 0.05f);
+       
     }
 
- 
+    public void SetActive(bool _state)
+    {
+        isBloom = _state;
+    }
+
+    public void ResetTime()
+    {
+        time = 0f;
+    }
+
+
 }

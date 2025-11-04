@@ -5,29 +5,56 @@ using UnityEngine;
 
 public class FlowerController : MonoBehaviour
 {
+   
+
     protected bool FullFlower = false;
+
     [SerializeField] protected GameObject flowerGround;
     [SerializeField] protected GameObject stem;
+    
+    [SerializeField] protected float Speed = 1f;
+    [SerializeField] protected Vector2 targetPosition;
+    [SerializeField] private float stemLength;
 
+    Vector2 OriginPos;//엘레베이터 배치 좌표값
+    float time = 0f;
 
-    private void OnTriggerEnter2D(Collider2D _other) //장애물들과 충돌처리 코드 완료. 테스트 필요
+    private void Awake()
     {
-
-        if (_other.CompareTag("Player_Fire"))
-        {
-          //  IsBloom(false);//public으로 풀면 프리팹 쓸 때 꼬이니까 상태 바꾸는 매서드로 활용
-            Debug.Log("시듦");
-        }
-
-
-        if (_other.CompareTag("Player_Water"))
-        {
-            //IsBloom(true);
-            Debug.Log("만개");
-        }
 
     }
 
 
+    void Start()
+        {
+            OriginPos = transform.localPosition;
+        }
+
+        void Update()
+        {
+            Vector2 pos;
+
+            if (FullFlower)//도착지점 바꿈
+            {
+                pos = targetPosition;
+            }
+            else
+            {
+                pos = OriginPos;
+            }
+
+            time += Time.deltaTime;
+
+
+            float rate = time / Speed * 0.07f;//버그 대비 속도 조정
+            rate = Mathf.Clamp01(rate);
+            transform.localPosition = Vector2.Lerp(transform.localPosition, pos, rate * 0.05f);
+        }
+    
+    
+    public void ResetTime()
+    {
+        time = 0f;
+    }
 
 }
