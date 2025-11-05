@@ -23,7 +23,7 @@ public class LoadingUI : UIBase
 
     protected override void OnShow()
     {
-        ShowAppropriateVersion(SceneController.CurrentLoadingStage);
+        SetLoidingScreen(SceneController.CurrentLoadingStage);
 
         if (loadingSlider != null)
         {
@@ -31,6 +31,7 @@ public class LoadingUI : UIBase
         }
     }
 
+    #region 로딩 스크린
     public void UpdateProgress(float progress)
     {
         if (loadingSlider != null)
@@ -44,7 +45,7 @@ public class LoadingUI : UIBase
         }
     }
 
-    private void ShowAppropriateVersion(int stageNumber)
+    private void SetLoidingScreen(int stageNumber)
     {
         loadingAVersion.SetActive(false);
         loadingBVersion.SetActive(false);
@@ -71,6 +72,7 @@ public class LoadingUI : UIBase
             loadingAVersion.SetActive(true);
         }
     }
+    #endregion
 
     #region 이벤트 구독/해제
     protected override void SubscribeEvents()
