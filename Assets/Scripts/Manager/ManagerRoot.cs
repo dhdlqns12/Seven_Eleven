@@ -15,7 +15,6 @@ public class ManagerRoot : Singleton<ManagerRoot>
     public static UIManager UIManager { get; private set; }
     public static SceneController SceneController { get; private set; }
     public static AudioManager AudioManager { get; private set; }
-   
 
     protected override void Init()
     {
@@ -23,5 +22,7 @@ public class ManagerRoot : Singleton<ManagerRoot>
         UIManager = uiManager;
         SceneController = sceneController;
         AudioManager = audioManager;
+
+        Screen.SetResolution(1920, 1080, true);
     }
 }
